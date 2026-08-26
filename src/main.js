@@ -55,7 +55,12 @@ document.querySelector('#app').innerHTML = `
         >
           Jak to funguje
         </a>
-
+<a
+  href="#o-nas"
+  class="text-sm font-medium text-white/60 transition-colors hover:text-white"
+>
+  O nás
+</a>
         <a
           href="#kontakt"
           class="text-sm font-medium text-white/60 transition-colors hover:text-white"
@@ -156,7 +161,12 @@ document.querySelector('#app').innerHTML = `
         >
           Jak to funguje
         </a>
-
+<a
+  href="#o-nas"
+  class="mobile-link mobile-menu-item rounded-xl px-4 py-3 text-lg font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+>
+  O nás
+</a>
         <a
           href="#kontakt"
           class="mobile-link mobile-menu-item rounded-xl px-4 py-3 text-lg font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
@@ -496,9 +506,7 @@ document.querySelector('#app').innerHTML = `
 
               <div class="mt-auto">
 
-                <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-500">
-                  01
-                </p>
+               
 
                 <h3 class="text-2xl font-black">
                   Přívěsky
@@ -543,9 +551,7 @@ document.querySelector('#app').innerHTML = `
 
               <div class="mt-auto">
 
-                <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-500">
-                  02
-                </p>
+             
 
                 <h3 class="text-2xl font-black">
                   Dárky
@@ -590,9 +596,7 @@ document.querySelector('#app').innerHTML = `
 
               <div class="mt-auto">
 
-                <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-500">
-                  03
-                </p>
+               
 
                 <h3 class="text-2xl font-black">
                   Náhradní
@@ -637,9 +641,7 @@ document.querySelector('#app').innerHTML = `
 
               <div class="mt-auto">
 
-                <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-500">
-                  04
-                </p>
+            
 
                 <h3 class="text-2xl font-black">
                   3D tisk
@@ -1411,6 +1413,154 @@ document.querySelector('#app').innerHTML = `
 
     </section>
 
+<!-- =========================
+     ABOUT / FOUNDER
+========================== -->
+
+<section
+  id="o-nas"
+  class="border-t border-white/10 bg-neutral-950 py-24 sm:py-32"
+>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+    <div
+      class="overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-900"
+    >
+
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr]">
+
+        <!-- TEXT -->
+
+        <div class="relative flex flex-col justify-center p-8 sm:p-12 lg:p-16">
+
+          <!-- Orange glow -->
+
+          <div
+            class="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-orange-500/10 blur-3xl"
+          ></div>
+
+          <div class="relative">
+
+            <div
+              class="mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-500"
+            >
+
+              <span class="h-px w-8 bg-orange-500"></span>
+
+              O SHOKOL
+
+            </div>
+
+
+            <h2
+              class="max-w-xl text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl"
+            >
+
+              Za každým výrobkem
+              <span class="text-white/40">
+                stojí člověk.
+              </span>
+
+            </h2>
+
+
+            <p
+              class="mt-6 max-w-xl text-lg leading-relaxed text-white/50"
+            >
+              SHOKOL vznikl z jednoduché myšlenky —
+              proměnit nápady v reálné výrobky.
+              Od prvního návrhu až po hotový produkt
+              hledáme řešení, které dává smysl.
+            </p>
+
+
+            <p
+              class="mt-5 max-w-xl text-lg leading-relaxed text-white/50"
+            >
+              Každou zakázku řešíme individuálně,
+              s důrazem na kvalitu, přesnost a výsledek,
+              se kterým budete spokojeni.
+            </p>
+
+
+            <!-- Founder -->
+
+            <div class="mt-10 flex items-center gap-4">
+
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-500"
+              >
+                S
+              </div>
+
+              <div>
+
+                <p class="font-bold text-white">
+                  Sergiy Petruyanchyk
+                </p>
+
+                <p class="mt-1 text-sm text-white/40">
+                  Zakladatel SHOKOL
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO -->
+
+        <div class="relative min-h-[420px] overflow-hidden lg:min-h-[600px]">
+
+          <img
+            src="/images/sergiy.jpg"
+            alt="Sergiy Petruyanchyk — zakladatel SHOKOL"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
+          />
+
+          <!-- Dark gradient -->
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent"
+          ></div>
+
+          <!-- Orange glow -->
+
+          <div
+            class="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-orange-500/20 blur-3xl"
+          ></div>
+
+
+          <!-- Photo label -->
+
+          <div
+            class="absolute bottom-6 left-6 rounded-2xl border border-white/10 bg-neutral-950/80 px-5 py-4 backdrop-blur-xl"
+          >
+
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+              SHOKOL
+            </p>
+
+            <p class="mt-1 text-sm text-white/50">
+              3D tisk na zakázku
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     <!-- =========================
          CONTACT
