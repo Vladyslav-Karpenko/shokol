@@ -2674,48 +2674,196 @@ window.addEventListener('load', syncWork1Height);
 window.addEventListener('resize', syncWork1Height);
 
 // ======================================================
-// DILDO SNOW — CLICK PHOTO TO TOGGLE
+// SHOKOL EASTER EGG QUIZ
 // ======================================================
 
 const photoButton = document.querySelector('#photo-button')
 
-let container = document.querySelector('#dildo-snow')
 
-if (!container) {
-  container = document.createElement('div')
-  container.id = 'dildo-snow'
-  document.body.appendChild(container)
-}
+// ======================================================
+// QUIZ QUESTIONS
+// ======================================================
+
+const czechHistoryQuiz = [
+
+  {
+    question: 'Kdo byl prezidentem České republiky v roce 2024?',
+    options: [
+      'Petr Pavel',
+      'Miloš Zeman',
+      'Petr Fiala',
+      'Andrej Babiš'
+    ],
+    correct: 0
+  },
+
+  {
+    question: 'Ve kterém měsíci roku 2024 zasáhly Česko rozsáhlé povodně?',
+    options: [
+      'Červen',
+      'Září',
+      'Listopad',
+      'Leden'
+    ],
+    correct: 1
+  },
+
+  {
+    question: 'Kdo byl premiérem České republiky před Andrejem Babišem?',
+    options: [
+      'Petr Fiala',
+      'Petr Pavel',
+      'Karel Havlíček',
+      'Jan Lipavský'
+    ],
+    correct: 0
+  },
+
+  {
+    question: 'Ve kterém měsíci roku 2025 se konaly volby do Poslanecké sněmovny?',
+    options: [
+      'Červen',
+      'Srpen',
+      'Říjen',
+      'Prosinec'
+    ],
+    correct: 2
+  },
+
+  {
+    question: 'Kdo byl 9. prosince 2025 jmenován premiérem České republiky?',
+    options: [
+      'Petr Fiala',
+      'Andrej Babiš',
+      'Petr Pavel',
+      'Karel Havlíček'
+    ],
+    correct: 1
+  },
+
+  {
+    question: 'Kdo jmenoval Andreje Babiše premiérem v prosinci 2025?',
+    options: [
+      'Petr Pavel',
+      'Petr Fiala',
+      'Senát',
+      'Poslanecká sněmovna'
+    ],
+    correct: 0
+  },
+
+  {
+    question: 'Kdo se stal prvním místopředsedou vlády Andreje Babiše v prosinci 2025?',
+    options: [
+      'Petr Macinka',
+      'Jaromír Zůna',
+      'Karel Havlíček',
+      'Robert Plaga'
+    ],
+    correct: 2
+  },
+
+  {
+    question: 'Ve kterém městě se v červenci 2026 konal summit NATO?',
+    options: [
+      'Praha',
+      'Brusel',
+      'Ankara',
+      'Varšava'
+    ],
+    correct: 2
+  },
+
+  {
+    question: 'Kolik procent HDP měla podle vyjádření premiéra Babiše ČR dosáhnout na obranu?',
+    options: [
+      '1 %',
+      '2 %',
+      '3 %',
+      '5 %'
+    ],
+    correct: 1
+  },
+
+  {
+    question: 'Kolik členských států NATO bylo uvedeno v závěrečné deklaraci summitu v Ankaře v roce 2026?',
+    options: [
+      '27',
+      '30',
+      '32',
+      '35'
+    ],
+    correct: 2
+  }
+
+]
+
+
+// ======================================================
+// STATE
+// ======================================================
+
+let easterEggUsed = false
 
 let dildoSnowActive = false
+
 let dildoSnowInterval = null
 
 
 // ======================================================
-// CREATE DILDO SNOWFLAKE
+// DILDO SNOW CONTAINER
+// ======================================================
+
+let container =
+  document.querySelector('#dildo-snow')
+
+
+if (!container) {
+
+  container =
+    document.createElement('div')
+
+  container.id =
+    'dildo-snow'
+
+  document.body.appendChild(container)
+
+}
+
+
+// ======================================================
+// CREATE DILDO
 // ======================================================
 
 function createDildoSnow() {
 
   if (!dildoSnowActive) return
 
-  const dildo = document.createElement('img')
+  const dildo =
+    document.createElement('img')
 
-  dildo.src = '/images/dildo.png'
+  dildo.src =
+    '/images/dildo.png'
 
-  dildo.className = 'dildo-snowflake'
+  dildo.className =
+    'dildo-snowflake'
 
   dildo.alt = ''
 
-  dildo.style.left = `${Math.random() * 100}vw`
+  dildo.style.left =
+    `${Math.random() * 100}vw`
 
-  const size = 18 + Math.random() * 32
+  const size =
+    18 + Math.random() * 32
 
-  dildo.style.width = `${size}px`
+  dildo.style.width =
+    `${size}px`
 
-  const fallDuration = 6 + Math.random() * 5
+  const fallDuration =
+    6 + Math.random() * 5
 
-  const swayDuration = 2 + Math.random() * 2
+  const swayDuration =
+    2 + Math.random() * 2
 
   dildo.style.animationDuration =
     `${fallDuration}s, ${swayDuration}s`
@@ -2723,13 +2871,16 @@ function createDildoSnow() {
   container.appendChild(dildo)
 
   setTimeout(() => {
+
     dildo.remove()
+
   }, (fallDuration + 1) * 1000)
+
 }
 
 
 // ======================================================
-// START
+// START DILDO SNOW
 // ======================================================
 
 function startDildoSnow() {
@@ -2738,53 +2889,419 @@ function startDildoSnow() {
 
   dildoSnowActive = true
 
-  photoButton?.classList.add('dildo-snow-active')
+  photoButton?.classList.add(
+    'dildo-snow-active'
+  )
 
   createDildoSnow()
 
-  dildoSnowInterval = setInterval(() => {
-    createDildoSnow()
-  }, 700)
+  dildoSnowInterval =
+    setInterval(() => {
+
+      createDildoSnow()
+
+    }, 700)
+
 }
 
 
 // ======================================================
-// STOP
+// CREATE QUIZ MODAL
 // ======================================================
 
-function stopDildoSnow() {
+function createQuizModal(questionData) {
 
-  dildoSnowActive = false
+  const modal =
+    document.createElement('div')
 
-  if (dildoSnowInterval !== null) {
-    clearInterval(dildoSnowInterval)
-    dildoSnowInterval = null
-  }
+  modal.id =
+    'shokolQuizModal'
 
-  container
-    .querySelectorAll('.dildo-snowflake')
-    .forEach((element) => {
-      element.remove()
-    })
+  modal.innerHTML = `
 
-  photoButton?.classList.remove('dildo-snow-active')
+    <div class="shokol-quiz-backdrop"></div>
+
+    <div
+      class="shokol-quiz-window"
+      role="dialog"
+      aria-modal="true"
+    >
+
+      <button
+        type="button"
+        class="shokol-quiz-close"
+        aria-label="Zavřít"
+      >
+        ×
+      </button>
+
+      <div class="shokol-quiz-label">
+        SHOKOL TAJNÝ BONUS
+      </div>
+
+      <h2>
+        Malá otázka...
+      </h2>
+
+      <p class="shokol-quiz-question">
+        ${questionData.question}
+      </p>
+
+      <div
+        id="quizOptions"
+        class="shokol-quiz-options"
+      >
+
+        ${questionData.options
+      .map(
+        (option, index) => `
+              <button
+                type="button"
+                class="shokol-answer"
+                data-answer="${index}"
+              >
+                <span class="shokol-answer-number">
+                  ${String.fromCharCode(65 + index)}
+                </span>
+
+                <span>
+                  ${option}
+                </span>
+              </button>
+            `
+      )
+      .join('')}
+
+      </div>
+
+      <p class="shokol-quiz-hint">
+        Máte pouze jeden pokus.
+      </p>
+
+    </div>
+
+  `
+
+  document.body.appendChild(modal)
+
+  return modal
+
 }
 
 
 // ======================================================
-// CLICK PHOTO
+// SUCCESS
+// ======================================================
+
+function showSuccessModal() {
+
+  document
+    .querySelector('#shokolQuizModal')
+    ?.remove()
+
+  const modal =
+    document.createElement('div')
+
+  modal.id =
+    'shokolQuizModal'
+
+  modal.innerHTML = `
+
+    <div class="shokol-quiz-backdrop"></div>
+
+    <div
+      class="shokol-quiz-window shokol-success-window"
+    >
+
+      <div class="shokol-success-icon">
+        ✓
+      </div>
+
+      <div class="shokol-quiz-label">
+        SHOKOL TAJNÝ BONUS
+      </div>
+
+      <h2>
+        🎉 Gratulujeme!
+      </h2>
+
+      <p class="shokol-success-text">
+        Správně!
+        Našli jste tajnou výzvu SHOKOL a odpověděli správně.
+      </p>
+
+      <div class="shokol-promo-box">
+
+        <span>
+          Váš promo kód
+        </span>
+
+        <strong>
+          DAREK2026
+        </strong>
+
+      </div>
+
+      <p class="shokol-success-small">
+        Ukažte tento kód při objednávce
+        a získejte svůj dárek zdarma.
+      </p>
+
+      <button
+        type="button"
+        class="shokol-quiz-submit"
+        id="closeSuccess"
+      >
+        Zavřít
+      </button>
+
+    </div>
+
+  `
+
+  document.body.appendChild(modal)
+
+  document
+    .querySelector('#closeSuccess')
+    ?.addEventListener(
+      'click',
+      () => {
+
+        modal.remove()
+
+      }
+    )
+
+}
+
+
+// ======================================================
+// WRONG ANSWER
+// ======================================================
+
+function showWrongModal() {
+
+  document
+    .querySelector('#shokolQuizModal')
+    ?.remove()
+
+  const modal =
+    document.createElement('div')
+
+  modal.id =
+    'shokolQuizModal'
+
+  modal.innerHTML = `
+
+    <div class="shokol-quiz-backdrop"></div>
+
+    <div
+      class="shokol-quiz-window shokol-wrong-window"
+    >
+
+      <div class="shokol-wrong-icon">
+        ×
+      </div>
+
+      <div class="shokol-quiz-label">
+        SHOKOL TAJNÝ BONUS
+      </div>
+
+      <h2>
+        Bohužel...
+      </h2>
+
+      <p class="shokol-success-text">
+        Je nám líto, ale vaše odpověď
+        nebyla správná.
+      </p>
+
+      <p class="shokol-success-small">
+        Tento pokus byl použit.
+        Zkuste to znovu po obnovení stránky.
+      </p>
+
+      <button
+        type="button"
+        class="shokol-quiz-submit"
+        id="closeWrong"
+      >
+        Zavřít
+      </button>
+
+    </div>
+
+  `
+
+  document.body.appendChild(modal)
+
+  document
+    .querySelector('#closeWrong')
+    ?.addEventListener(
+      'click',
+      () => {
+
+        modal.remove()
+
+      }
+    )
+
+}
+
+
+// ======================================================
+// OPEN QUIZ
+// ======================================================
+
+function openQuiz() {
+
+  if (easterEggUsed) return
+
+  // Один шанс
+  easterEggUsed = true
+
+  // Убираем обработчик с фотографии
+  photoButton?.removeEventListener(
+    'click',
+    handlePhotoClick
+  )
+
+
+  // Случайный вопрос
+  const randomQuestion =
+    czechHistoryQuiz[
+    Math.floor(
+      Math.random() *
+      czechHistoryQuiz.length
+    )
+    ]
+
+
+  const modal =
+    createQuizModal(
+      randomQuestion
+    )
+
+
+  // Закрытие окна
+  modal
+    .querySelector(
+      '.shokol-quiz-close'
+    )
+    ?.addEventListener(
+      'click',
+      () => {
+
+        modal.remove()
+
+      }
+    )
+
+
+  // Варианты ответа
+  const answers =
+    modal.querySelectorAll(
+      '.shokol-answer'
+    )
+
+
+  answers.forEach(
+    (button) => {
+
+      button.addEventListener(
+        'click',
+        () => {
+
+          const selected =
+            Number(
+              button.dataset.answer
+            )
+
+
+          // Заблокировать остальные кнопки
+          answers.forEach(
+            (item) => {
+
+              item.disabled = true
+
+            }
+          )
+
+
+          // Правильный ответ
+          if (
+            selected ===
+            randomQuestion.correct
+          ) {
+
+            button.classList.add(
+              'correct'
+            )
+
+            setTimeout(
+              () => {
+
+                modal.remove()
+
+                startDildoSnow()
+
+                showSuccessModal()
+
+              },
+              350
+            )
+
+          }
+
+          // Неправильный ответ
+          else {
+
+            button.classList.add(
+              'wrong'
+            )
+
+            setTimeout(
+              () => {
+
+                modal.remove()
+
+                showWrongModal()
+
+              },
+              350
+            )
+
+          }
+
+        }
+      )
+
+    }
+  )
+
+}
+
+
+// ======================================================
+// PHOTO CLICK
+// ======================================================
+
+function handlePhotoClick() {
+
+  openQuiz()
+
+}
+
+
+// ======================================================
+// ATTACH EVENT
 // ======================================================
 
 if (photoButton) {
 
-  photoButton.addEventListener('click', () => {
-
-    if (dildoSnowActive) {
-      stopDildoSnow()
-    } else {
-      startDildoSnow()
-    }
-
-  })
+  photoButton.addEventListener(
+    'click',
+    handlePhotoClick
+  )
 
 }
