@@ -51,6 +51,9 @@ body {
   body {
     padding-bottom: 0;
   }
+  #footer-info {
+    display: none;
+  }
 }
 /* =========================
    MOBILE MENU

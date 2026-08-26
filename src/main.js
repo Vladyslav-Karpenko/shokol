@@ -327,7 +327,7 @@ document.querySelector('#app').innerHTML = `
         >
 
           <div
-            class="relative aspect-square w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-900 shadow-2xl"
+            class="relative aspect-square w-full max-w-xl overflow-hidden rounded-4xl border border-white/10 bg-neutral-900 shadow-2xl"
           >
 
             <div
@@ -341,7 +341,7 @@ document.querySelector('#app').innerHTML = `
             >
 
               <div
-                class="relative h-64 w-64 rounded-[2.5rem] border border-orange-500/20 bg-gradient-to-br from-neutral-700 via-neutral-800 to-neutral-950 shadow-[0_35px_100px_rgba(0,0,0,0.65)] transition-transform duration-300 sm:h-96 sm:w-96"
+                class="relative h-64 w-64 rounded-[2.5rem] border border-orange-500/20 bg-linear-to-br from-neutral-700 via-neutral-800 to-neutral-950 shadow-[0_35px_100px_rgba(0,0,0,0.65)] transition-transform duration-300 sm:h-96 sm:w-96"
               >
 
                 <div
@@ -349,11 +349,11 @@ document.querySelector('#app').innerHTML = `
                 ></div>
 
                 <div
-                  class="absolute inset-10 rounded-[2rem] border border-white/5"
+                  class="absolute inset-10 rounded-4xl border border-white/5"
                 ></div>
 
                 <div
-                  class="absolute inset-14 rounded-[1.5rem] border border-orange-500/10"
+                  class="absolute inset-14 rounded-3xl border border-orange-500/10"
                 ></div>
 
 
@@ -362,11 +362,11 @@ document.querySelector('#app').innerHTML = `
                 >
 
                   <div
-                    class="relative h-40 w-40 rounded-[2rem] border-2 border-orange-500/50 bg-neutral-900 shadow-[0_20px_60px_rgba(249,115,22,0.15)] sm:h-52 sm:w-52"
+                    class="relative h-40 w-40 rounded-4xl border-2 border-orange-500/50 bg-neutral-900 shadow-[0_20px_60px_rgba(249,115,22,0.15)] sm:h-52 sm:w-52"
                   >
 
                     <div
-                      class="absolute inset-4 rounded-[1.5rem] border border-orange-500/20"
+                      class="absolute inset-4 rounded-3xl border border-orange-500/20"
                     ></div>
 
                     <div
@@ -489,7 +489,7 @@ document.querySelector('#app').innerHTML = `
           <!-- CARD 1 -->
 
           <article
-            class="group relative min-h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
+            class="group relative min-h-95 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
           >
 
             <div
@@ -534,7 +534,7 @@ document.querySelector('#app').innerHTML = `
           <!-- CARD 2 -->
 
           <article
-            class="group relative min-h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
+            class="group relative min-h-95 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
           >
 
             <div
@@ -579,7 +579,7 @@ document.querySelector('#app').innerHTML = `
           <!-- CARD 3 -->
 
           <article
-            class="group relative min-h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
+            class="group relative min-h-95 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
           >
 
             <div
@@ -624,7 +624,7 @@ document.querySelector('#app').innerHTML = `
           <!-- CARD 4 -->
 
           <article
-            class="group relative min-h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
+            class="group relative min-h-95 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40"
           >
 
             <div
@@ -669,7 +669,7 @@ document.querySelector('#app').innerHTML = `
 
 
         <div
-          class="mt-6 flex flex-col items-start justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:flex-row sm:items-center"
+          class="mt-6 flex flex-col items-start justify-between gap-6 rounded-3xl border border-white/10 bg-white/3 p-8 sm:flex-row sm:items-center"
         >
 
           <div>
@@ -750,7 +750,7 @@ document.querySelector('#app').innerHTML = `
             <div class="mb-8 flex h-32 items-center justify-center rounded-2xl bg-neutral-950">
 
               <div
-                class="h-20 w-20 rounded-full border-[12px] border-white/20 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+                class="h-20 w-20 rounded-full border-12 border-white/20 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
               ></div>
 
             </div>
@@ -782,7 +782,7 @@ document.querySelector('#app').innerHTML = `
             <div class="mb-8 flex h-32 items-center justify-center rounded-2xl bg-neutral-950">
 
               <div
-                class="h-20 w-20 rounded-full border-[12px] border-slate-400/30 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+                class="h-20 w-20 rounded-full border-12 border-slate-400/30 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
               ></div>
 
             </div>
@@ -814,7 +814,7 @@ document.querySelector('#app').innerHTML = `
             <div class="mb-8 flex h-32 items-center justify-center rounded-2xl bg-neutral-950">
 
               <div
-                class="h-20 w-20 rounded-full border-[12px] border-orange-500/30 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+                class="h-20 w-20 rounded-full border-12 border-orange-500/30 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
               ></div>
 
             </div>
@@ -1903,11 +1903,92 @@ document.querySelector('#app').innerHTML = `
           </div>
 
         </div>
+<!-- LOCATION -->
 
+<div class="mt-16 border-t border-white/10 pt-16 sm:mt-20 sm:pt-20">
+
+  <div class="mb-6 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+
+    <div>
+
+      <div class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-500">
+
+        <span class="h-px w-8 bg-orange-500"></span>
+
+        Kde nás najdete
+
+      </div>
+
+      <h3 class="text-2xl font-black sm:text-3xl">
+        Praha 3 — Žižkov
+      </h3>
+
+      <p class="mt-2 text-sm text-white/40">
+        Víta Nejedlého, 130 00 Praha 3
+      </p>
+
+    </div>
+
+
+    <a
+      href="https://maps.app.goo.gl/p7BBh4JBM43Box5R9"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex shrink-0 items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:border-orange-500 hover:text-orange-500"
+    >
+      Otevřít v Google Maps →
+    </a>
+
+  </div>
+
+
+  <!-- MAP -->
+
+  <div class="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-900 shadow-2xl">
+
+    <div class="relative h-[300px] sm:h-[400px] lg:h-[450px]">
+
+      <iframe
+        src="https://www.google.com/maps?q=Víta+Nejedlého,+130+00+Praha+3-Žižkov&output=embed"
+        class="absolute inset-0 h-full w-full border-0 grayscale-[20%] transition-all duration-700 group-hover:grayscale-0"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="SHOKOL — 3D tisk Praha 3"
+      ></iframe>
+
+
+      <!-- SHOKOL LABEL -->
+
+      <div
+        class="pointer-events-none absolute left-5 top-5 rounded-2xl border border-white/10 bg-neutral-950/90 px-5 py-4 shadow-2xl backdrop-blur-xl"
+      >
+
+        <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+          SHOKOL
+        </div>
+
+        <div class="mt-1 text-sm font-semibold text-white">
+          3D tisk v Praze
+        </div>
+
+        <div class="mt-1 text-xs text-white/40">
+          Žižkov · Praha 3
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
       </div>
 
     </section>
 
+
+    
   </main>
 
 
@@ -1937,7 +2018,7 @@ document.querySelector('#app').innerHTML = `
         </div>
 
 
-        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/40">
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/40" id="footer-info">
 
           <a href="#sluzby" class="transition-colors hover:text-white">
             Služby
@@ -2019,41 +2100,41 @@ const mobileLinks = document.querySelectorAll('.mobile-link')
 
 function openMobileMenu() {
 
-    if (!menuButton || !mobileMenu) return
+  if (!menuButton || !mobileMenu) return
 
-    mobileMenu.classList.add('open')
+  mobileMenu.classList.add('open')
 
-    menuButton.classList.add('open')
+  menuButton.classList.add('open')
 
-    menuButton.setAttribute(
-        'aria-expanded',
-        'true'
-    )
+  menuButton.setAttribute(
+    'aria-expanded',
+    'true'
+  )
 
-    menuButton.setAttribute(
-        'aria-label',
-        'Zavřít menu'
-    )
+  menuButton.setAttribute(
+    'aria-label',
+    'Zavřít menu'
+  )
 }
 
 
 function closeMobileMenu() {
 
-    if (!menuButton || !mobileMenu) return
+  if (!menuButton || !mobileMenu) return
 
-    mobileMenu.classList.remove('open')
+  mobileMenu.classList.remove('open')
 
-    menuButton.classList.remove('open')
+  menuButton.classList.remove('open')
 
-    menuButton.setAttribute(
-        'aria-expanded',
-        'false'
-    )
+  menuButton.setAttribute(
+    'aria-expanded',
+    'false'
+  )
 
-    menuButton.setAttribute(
-        'aria-label',
-        'Otevřít menu'
-    )
+  menuButton.setAttribute(
+    'aria-label',
+    'Otevřít menu'
+  )
 }
 
 
@@ -2061,27 +2142,27 @@ function closeMobileMenu() {
 
 if (menuButton && mobileMenu) {
 
-    menuButton.addEventListener(
-        'click',
-        (event) => {
+  menuButton.addEventListener(
+    'click',
+    (event) => {
 
-            event.stopPropagation()
+      event.stopPropagation()
 
-            const isOpen =
-                mobileMenu.classList.contains('open')
+      const isOpen =
+        mobileMenu.classList.contains('open')
 
-            if (isOpen) {
+      if (isOpen) {
 
-                closeMobileMenu()
+        closeMobileMenu()
 
-            } else {
+      } else {
 
-                openMobileMenu()
+        openMobileMenu()
 
-            }
+      }
 
-        }
-    )
+    }
+  )
 
 }
 
@@ -2090,14 +2171,14 @@ if (menuButton && mobileMenu) {
 
 mobileLinks.forEach((link) => {
 
-    link.addEventListener(
-        'click',
-        () => {
+  link.addEventListener(
+    'click',
+    () => {
 
-            closeMobileMenu()
+      closeMobileMenu()
 
-        }
-    )
+    }
+  )
 
 })
 
@@ -2105,21 +2186,21 @@ mobileLinks.forEach((link) => {
 // Close after CTA click
 
 const mobileMenuCta =
-    mobileMenu?.querySelector(
-        '.mobile-menu-item:last-child'
-    )
+  mobileMenu?.querySelector(
+    '.mobile-menu-item:last-child'
+  )
 
 
 if (mobileMenuCta) {
 
-    mobileMenuCta.addEventListener(
-        'click',
-        () => {
+  mobileMenuCta.addEventListener(
+    'click',
+    () => {
 
-            closeMobileMenu()
+      closeMobileMenu()
 
-        }
-    )
+    }
+  )
 
 }
 
@@ -2127,62 +2208,62 @@ if (mobileMenuCta) {
 // Close when clicking outside
 
 document.addEventListener(
-    'click',
-    (event) => {
+  'click',
+  (event) => {
 
-        if (!mobileMenu || !menuButton) {
-            return
-        }
+    if (!mobileMenu || !menuButton) {
+      return
+    }
 
-        const isOpen =
-            mobileMenu.classList.contains('open')
+    const isOpen =
+      mobileMenu.classList.contains('open')
 
-        if (!isOpen) {
-            return
-        }
+    if (!isOpen) {
+      return
+    }
 
-        if (
-            !mobileMenu.contains(event.target) &&
-            !menuButton.contains(event.target)
-        ) {
+    if (
+      !mobileMenu.contains(event.target) &&
+      !menuButton.contains(event.target)
+    ) {
 
-            closeMobileMenu()
-
-        }
+      closeMobileMenu()
 
     }
+
+  }
 )
 
 
 // Close with ESC
 
 document.addEventListener(
-    'keydown',
-    (event) => {
+  'keydown',
+  (event) => {
 
-        if (event.key === 'Escape') {
+    if (event.key === 'Escape') {
 
-            closeMobileMenu()
-
-        }
+      closeMobileMenu()
 
     }
+
+  }
 )
 
 
 // Close when switching to desktop
 
 window.addEventListener(
-    'resize',
-    () => {
+  'resize',
+  () => {
 
-        if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 768) {
 
-            closeMobileMenu()
-
-        }
+      closeMobileMenu()
 
     }
+
+  }
 )
 
 
@@ -2191,151 +2272,151 @@ window.addEventListener(
 // ======================================================
 
 const contactForm =
-    document.querySelector('#contactForm')
+  document.querySelector('#contactForm')
 
 const formMessage =
-    document.querySelector('#formMessage')
+  document.querySelector('#formMessage')
 
 
 if (contactForm) {
 
-    contactForm.addEventListener(
-        'submit',
-        async (event) => {
+  contactForm.addEventListener(
+    'submit',
+    async (event) => {
 
-            event.preventDefault()
-
-
-            const submitButton =
-                contactForm.querySelector(
-                    'button[type="submit"]'
-                )
+      event.preventDefault()
 
 
-            if (!submitButton) {
-                return
+      const submitButton =
+        contactForm.querySelector(
+          'button[type="submit"]'
+        )
+
+
+      if (!submitButton) {
+        return
+      }
+
+
+      submitButton.disabled = true
+
+      submitButton.textContent =
+        'Odesílám...'
+
+
+      formMessage?.classList.add(
+        'hidden'
+      )
+
+
+      try {
+
+        const response =
+          await fetch(
+            contactForm.action,
+            {
+              method: 'POST',
+
+              body:
+                new FormData(
+                  contactForm
+                ),
+
+              headers: {
+                Accept:
+                  'application/json',
+              },
             }
+          )
 
 
-            submitButton.disabled = true
+        if (response.ok) {
 
-            submitButton.textContent =
-                'Odesílám...'
+          contactForm.reset()
 
 
-            formMessage?.classList.add(
-                'hidden'
+          if (formMessage) {
+
+            formMessage.textContent =
+              'Děkujeme! Vaše poptávka byla úspěšně odeslána.'
+
+
+            formMessage.classList.remove(
+              'hidden'
             )
 
 
-            try {
-
-                const response =
-                    await fetch(
-                        contactForm.action,
-                        {
-                            method: 'POST',
-
-                            body:
-                                new FormData(
-                                    contactForm
-                                ),
-
-                            headers: {
-                                Accept:
-                                    'application/json',
-                            },
-                        }
-                    )
+            formMessage.classList.remove(
+              'text-red-400'
+            )
 
 
-                if (response.ok) {
+            formMessage.classList.add(
+              'text-orange-500'
+            )
 
-                    contactForm.reset()
+          }
 
+        } else {
 
-                    if (formMessage) {
+          if (formMessage) {
 
-                        formMessage.textContent =
-                            'Děkujeme! Vaše poptávka byla úspěšně odeslána.'
-
-
-                        formMessage.classList.remove(
-                            'hidden'
-                        )
+            formMessage.textContent =
+              'Něco se nepodařilo. Zkuste to prosím znovu.'
 
 
-                        formMessage.classList.remove(
-                            'text-red-400'
-                        )
+            formMessage.classList.remove(
+              'hidden'
+            )
 
 
-                        formMessage.classList.add(
-                            'text-orange-500'
-                        )
-
-                    }
-
-                } else {
-
-                    if (formMessage) {
-
-                        formMessage.textContent =
-                            'Něco se nepodařilo. Zkuste to prosím znovu.'
+            formMessage.classList.remove(
+              'text-orange-500'
+            )
 
 
-                        formMessage.classList.remove(
-                            'hidden'
-                        )
+            formMessage.classList.add(
+              'text-red-400'
+            )
 
-
-                        formMessage.classList.remove(
-                            'text-orange-500'
-                        )
-
-
-                        formMessage.classList.add(
-                            'text-red-400'
-                        )
-
-                    }
-
-                }
-
-            } catch (error) {
-
-                if (formMessage) {
-
-                    formMessage.textContent =
-                        'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.'
-
-
-                    formMessage.classList.remove(
-                        'hidden'
-                    )
-
-
-                    formMessage.classList.remove(
-                        'text-orange-500'
-                    )
-
-
-                    formMessage.classList.add(
-                        'text-red-400'
-                    )
-
-                }
-
-            }
-
-
-            submitButton.disabled = false
-
-            submitButton.textContent =
-                'Odeslat poptávku →'
+          }
 
         }
-    )
+
+      } catch (error) {
+
+        if (formMessage) {
+
+          formMessage.textContent =
+            'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.'
+
+
+          formMessage.classList.remove(
+            'hidden'
+          )
+
+
+          formMessage.classList.remove(
+            'text-orange-500'
+          )
+
+
+          formMessage.classList.add(
+            'text-red-400'
+          )
+
+        }
+
+      }
+
+
+      submitButton.disabled = false
+
+      submitButton.textContent =
+        'Odeslat poptávku →'
+
+    }
+  )
 
 }
 
@@ -2345,61 +2426,61 @@ if (contactForm) {
 // ======================================================
 
 const revealElements =
-    document.querySelectorAll(
-        'section > div, article'
-    )
+  document.querySelectorAll(
+    'section > div, article'
+  )
 
 
 revealElements.forEach(
-    (element) => {
+  (element) => {
 
-        element.classList.add(
-            'reveal'
-        )
+    element.classList.add(
+      'reveal'
+    )
 
-    }
+  }
 )
 
 
 const revealObserver =
-    new IntersectionObserver(
-        (entries) => {
+  new IntersectionObserver(
+    (entries) => {
 
-            entries.forEach(
-                (entry) => {
+      entries.forEach(
+        (entry) => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+          if (
+            entry.isIntersecting
+          ) {
 
-                        entry.target.classList.add(
-                            'reveal-visible'
-                        )
-
-                        revealObserver.unobserve(
-                            entry.target
-                        )
-
-                    }
-
-                }
+            entry.target.classList.add(
+              'reveal-visible'
             )
 
-        },
-        {
-            threshold: 0.12,
+            revealObserver.unobserve(
+              entry.target
+            )
+
+          }
+
         }
-    )
+      )
+
+    },
+    {
+      threshold: 0.12,
+    }
+  )
 
 
 revealElements.forEach(
-    (element) => {
+  (element) => {
 
-        revealObserver.observe(
-            element
-        )
+    revealObserver.observe(
+      element
+    )
 
-    }
+  }
 )
 
 
@@ -2408,47 +2489,47 @@ revealElements.forEach(
 // ======================================================
 
 const heroProduct =
-    document.querySelector(
-        '#heroProduct'
-    )
+  document.querySelector(
+    '#heroProduct'
+  )
 
 
 if (
-    heroProduct &&
-    window.matchMedia(
-        '(pointer: fine)'
-    ).matches
+  heroProduct &&
+  window.matchMedia(
+    '(pointer: fine)'
+  ).matches
 ) {
 
-    document.addEventListener(
-        'mousemove',
-        (event) => {
+  document.addEventListener(
+    'mousemove',
+    (event) => {
 
-            const x =
-                (
-                    event.clientX /
-                    window.innerWidth -
-                    0.5
-                ) * 2
-
-
-            const y =
-                (
-                    event.clientY /
-                    window.innerHeight -
-                    0.5
-                ) * 2
+      const x =
+        (
+          event.clientX /
+          window.innerWidth -
+          0.5
+        ) * 2
 
 
-            heroProduct.style.transform = `
+      const y =
+        (
+          event.clientY /
+          window.innerHeight -
+          0.5
+        ) * 2
+
+
+      heroProduct.style.transform = `
         translate(
           ${x * 8}px,
           ${y * 8}px
         )
       `
 
-        }
-    )
+    }
+  )
 
 }
 
@@ -2458,66 +2539,66 @@ if (
 // ======================================================
 
 const mobileCta =
-    document.querySelector(
-        '#mobileCta'
-    )
+  document.querySelector(
+    '#mobileCta'
+  )
 
 
 const heroSection =
-    document.querySelector(
-        'main > section'
-    )
+  document.querySelector(
+    'main > section'
+  )
 
 
 const contactSection =
-    document.querySelector(
-        '#kontakt'
-    )
+  document.querySelector(
+    '#kontakt'
+  )
 
 
 const updateMobileCta = () => {
 
-    if (
-        !mobileCta ||
-        !heroSection ||
-        !contactSection
-    ) {
+  if (
+    !mobileCta ||
+    !heroSection ||
+    !contactSection
+  ) {
 
-        return
+    return
 
-    }
-
-
-    const heroBottom =
-        heroSection.getBoundingClientRect()
-            .bottom
+  }
 
 
-    const contactTop =
-        contactSection.getBoundingClientRect()
-            .top
+  const heroBottom =
+    heroSection.getBoundingClientRect()
+      .bottom
 
 
-    if (
-        heroBottom < 0 &&
-        contactTop > window.innerHeight
-    ) {
+  const contactTop =
+    contactSection.getBoundingClientRect()
+      .top
 
-        mobileCta.classList.remove(
-            'translate-y-24',
-            'opacity-0',
-            'pointer-events-none'
-        )
 
-    } else {
+  if (
+    heroBottom < 0 &&
+    contactTop > window.innerHeight
+  ) {
 
-        mobileCta.classList.add(
-            'translate-y-24',
-            'opacity-0',
-            'pointer-events-none'
-        )
+    mobileCta.classList.remove(
+      'translate-y-24',
+      'opacity-0',
+      'pointer-events-none'
+    )
 
-    }
+  } else {
+
+    mobileCta.classList.add(
+      'translate-y-24',
+      'opacity-0',
+      'pointer-events-none'
+    )
+
+  }
 
 }
 
@@ -2526,11 +2607,11 @@ const updateMobileCta = () => {
 
 if (mobileCta) {
 
-    mobileCta.classList.add(
-        'translate-y-24',
-        'opacity-0',
-        'pointer-events-none'
-    )
+  mobileCta.classList.add(
+    'translate-y-24',
+    'opacity-0',
+    'pointer-events-none'
+  )
 
 }
 
@@ -2538,11 +2619,11 @@ if (mobileCta) {
 // Scroll
 
 window.addEventListener(
-    'scroll',
-    updateMobileCta,
-    {
-        passive: true,
-    }
+  'scroll',
+  updateMobileCta,
+  {
+    passive: true,
+  }
 )
 
 
