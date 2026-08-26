@@ -1120,7 +1120,7 @@ document.querySelector('#app').innerHTML = `
 
           <!-- WORK 5 -->
 
-          <article id="work-3"
+          <article 
             class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 sm:col-span-2 lg:col-span-4"
           >
 
@@ -1518,15 +1518,17 @@ document.querySelector('#app').innerHTML = `
         <div class="relative min-h-[420px] overflow-hidden lg:min-h-[600px]">
 
           <img
-            src="/images/sergiy.jpg"
-            alt="Sergiy Petruyanchyk — zakladatel SHOKOL"
-            class="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
-          />
+  id="photo-button"
+  src="/images/sergiy.jpg"
+  alt="Sergiy Petruyanchyk — zakladatel SHOKOL"
+  class="absolute  h-full w-full cursor-pointer object-cover transition duration-700 hover:scale-105"
+  style="cursor: pointer;"
+/>
 
           <!-- Dark gradient -->
 
           <div
-            class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent"
+            class="absolute bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent"
           ></div>
 
           <!-- Orange glow -->
@@ -2049,7 +2051,7 @@ document.querySelector('#app').innerHTML = `
   class="mt-10 border-t border-white/10 pt-6"
 >
 
-  <div class="flex w-full items-center justify-between text-xs text-white/20"">
+  <div class="flex w-full items-center justify-between text-xs text-white/20">
 
     <span>
       © ${new Date().getFullYear()} SHOKOL.
@@ -2670,3 +2672,119 @@ function syncWork1Height() {
 window.addEventListener('load', syncWork1Height);
 
 window.addEventListener('resize', syncWork1Height);
+
+// ======================================================
+// DILDO SNOW — CLICK PHOTO TO TOGGLE
+// ======================================================
+
+const photoButton = document.querySelector('#photo-button')
+
+let container = document.querySelector('#dildo-snow')
+
+if (!container) {
+  container = document.createElement('div')
+  container.id = 'dildo-snow'
+  document.body.appendChild(container)
+}
+
+let dildoSnowActive = false
+let dildoSnowInterval = null
+
+
+// ======================================================
+// CREATE DILDO SNOWFLAKE
+// ======================================================
+
+function createDildoSnow() {
+
+  if (!dildoSnowActive) return
+
+  const dildo = document.createElement('img')
+
+  dildo.src = '/images/dildo.png'
+
+  dildo.className = 'dildo-snowflake'
+
+  dildo.alt = ''
+
+  dildo.style.left = `${Math.random() * 100}vw`
+
+  const size = 18 + Math.random() * 32
+
+  dildo.style.width = `${size}px`
+
+  const fallDuration = 6 + Math.random() * 5
+
+  const swayDuration = 2 + Math.random() * 2
+
+  dildo.style.animationDuration =
+    `${fallDuration}s, ${swayDuration}s`
+
+  container.appendChild(dildo)
+
+  setTimeout(() => {
+    dildo.remove()
+  }, (fallDuration + 1) * 1000)
+}
+
+
+// ======================================================
+// START
+// ======================================================
+
+function startDildoSnow() {
+
+  if (dildoSnowActive) return
+
+  dildoSnowActive = true
+
+  photoButton?.classList.add('dildo-snow-active')
+
+  createDildoSnow()
+
+  dildoSnowInterval = setInterval(() => {
+    createDildoSnow()
+  }, 700)
+}
+
+
+// ======================================================
+// STOP
+// ======================================================
+
+function stopDildoSnow() {
+
+  dildoSnowActive = false
+
+  if (dildoSnowInterval !== null) {
+    clearInterval(dildoSnowInterval)
+    dildoSnowInterval = null
+  }
+
+  container
+    .querySelectorAll('.dildo-snowflake')
+    .forEach((element) => {
+      element.remove()
+    })
+
+  photoButton?.classList.remove('dildo-snow-active')
+}
+
+
+// ======================================================
+// CLICK PHOTO
+// ======================================================
+
+if (photoButton) {
+
+  photoButton.addEventListener('click', () => {
+
+    if (dildoSnowActive) {
+      stopDildoSnow()
+    } else {
+      startDildoSnow()
+    }
+
+  })
+
+}

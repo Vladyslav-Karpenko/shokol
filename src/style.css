@@ -161,3 +161,60 @@ body {
     transition: none !important;
   }
 }
+
+/* ======================================================
+   DILDO SNOW
+====================================================== */
+
+#dildo-snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.dildo-snowflake {
+  position: absolute;
+  top: -60px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+
+  animation-name: dildoFall, dildoSway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: 1, infinite;
+
+  will-change: transform;
+}
+
+@keyframes dildoFall {
+  from {
+    transform: translateY(-80px) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes dildoSway {
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 40px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+/* Эффект на фотографии при включении */
+
+.dildo-snow-active {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
