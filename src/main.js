@@ -986,46 +986,46 @@ document.querySelector('#app').innerHTML = `
         <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
 
 
+
+
           <!-- WORK 1 -->
 
-          <article
-            class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 sm:col-span-2 lg:col-span-7 lg:row-span-2"
-          >
+<article id="work-1"
+  class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 sm:col-span-2 lg:col-span-7 lg:row-span-2"
+>
 
-            <div class="aspect-square overflow-hidden">
+<div class="object-[50%_45%] overflow-hidden bg-neutral-900">
+  <img
+    src="/images/gallery/work-01.jpg"
+    alt="3D tištěný výrobek SHOKOL"
+    class="h-full w-full object-contain object-center transition duration-700 group-hover:scale-105"
+  />
+</div>
 
-              <img
-                src="/images/gallery/work-01.jpg"
-                alt="3D tištěný výrobek SHOKOL"
-                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-              />
+  <div
+    class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-7 pt-24"
+  >
 
-            </div>
+    <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+      Zakázková výroba
+    </span>
 
-            <div
-              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-7 pt-24"
-            >
+    <h3 class="mt-2 text-2xl font-black">
+      Výrobek na míru
+    </h3>
 
-              <span class="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
-                Zakázková výroba
-              </span>
+  </div>
 
-              <h3 class="mt-2 text-2xl font-black">
-                Výrobek na míru
-              </h3>
-
-            </div>
-
-          </article>
+</article>
 
 
           <!-- WORK 2 -->
 
-          <article
+          <article id="work-2"
             class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 lg:col-span-5"
           >
 
-            <div class="aspect-[4/3] overflow-hidden">
+            <div class="aspect-4/3 overflow-hidden">
 
               <img
                 src="/images/gallery/work-02.jpg"
@@ -1054,7 +1054,7 @@ document.querySelector('#app').innerHTML = `
 
           <!-- WORK 3 -->
 
-          <article
+          <article id="work-3"
             class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 lg:col-span-5"
           >
 
@@ -1120,7 +1120,7 @@ document.querySelector('#app').innerHTML = `
 
           <!-- WORK 5 -->
 
-          <article
+          <article id="work-3"
             class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 sm:col-span-2 lg:col-span-4"
           >
 
@@ -2630,3 +2630,43 @@ window.addEventListener(
 // Initial check
 
 updateMobileCta()
+
+// Высота первой карточки 
+
+function syncWork1Height() {
+
+  const work1 = document.getElementById('work-1');
+
+  const work2 = document.getElementById('work-2');
+
+  const work3 = document.getElementById('work-3');
+
+  if (!work1 || !work2 || !work3) return;
+
+  // Только на desktop
+
+  if (window.innerWidth >= 1024) {
+
+    const gap = parseFloat(getComputedStyle(work2.parentElement).rowGap);
+
+    const image2 = work2.querySelector('img');
+    const image3 = work3.querySelector('img');
+
+    const height =
+      image2.getBoundingClientRect().height +
+      image3.getBoundingClientRect().height +
+      gap;
+
+    work1.style.height = `${height}px`;
+
+  } else {
+
+    work1.style.height = '';
+
+  }
+
+}
+
+window.addEventListener('load', syncWork1Height);
+
+window.addEventListener('resize', syncWork1Height);
