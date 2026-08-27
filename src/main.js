@@ -2065,12 +2065,17 @@ Všechna práva vyhrazena.
  
 
 </div>
- <div class="mt-4 text-center text-[11px] text-white/15">
-    Web vytvořil
-    <span class="font-medium text-white/25">
-      Vladyslav Karpenko
-    </span>
-  </div>
+<div class="mt-4 text-center text-[11px] text-white/15">
+  Web vytvořil
+  <a
+    href="https://www.drakes.cz/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="font-medium text-white/25 transition-colors hover:text-orange-500"
+  >
+    Vladyslav Karpenko
+  </a>
+</div>
   </footer>
 
 
