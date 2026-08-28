@@ -1,6 +1,32 @@
 import './style.css'
 
 document.querySelector('#app').innerHTML = `
+<!-- SITE BACKGROUND VIDEO -->
+
+<video
+  id="siteBackgroundVideo"
+  class="pointer-events-none fixed inset-0 z-0 h-full w-full object-cover"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+>
+  <source
+    src="/videos/3d-print.mp4"
+    type="video/mp4"
+  />
+</video>
+
+<!-- DARK OVERLAY -->
+
+<div
+  class="pointer-events-none fixed inset-0 z-[1] bg-black/75"
+></div>
+
+<!-- SITE CONTENT -->
+
+<div class="relative z-10">
   <!-- =========================
        HEADER
   ========================== -->
