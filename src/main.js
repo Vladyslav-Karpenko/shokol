@@ -256,14 +256,32 @@ document.querySelector('#app').innerHTML = `
           </div>
 
 
-          <h1
-            class="max-w-3xl text-[3rem] font-black leading-[0.9] tracking-[-0.04em] sm:text-6xl lg:text-8xl"
-          >
-            Tvoříme
-            <span class="text-orange-500">
-              ve 3D.
-            </span>
-          </h1>
+          <!-- =========================
+     SHOKOL — 3D PRINT TITLE
+========================== -->
+
+<div id="shokolPrintTitle" class="shokol-print-title">
+
+  <h1
+  id="shokolHeroTitle"
+  class="max-w-3xl text-[3rem] font-black leading-[0.9] tracking-[-0.04em] sm:text-6xl lg:text-8xl"
+>
+  <span class="shokol-print-line">
+    Tvoříme
+  </span>
+
+  <span class="shokol-print-line text-orange-500">
+    ve 3D.
+  </span>
+</h1>
+
+  <!-- линия печати -->
+  <div
+    id="shokolPrintBeam"
+    class="shokol-print-beam"
+  ></div>
+
+</div>
 
 
           <p
@@ -933,7 +951,7 @@ document.querySelector('#app').innerHTML = `
       id="shokolBottomText"
       class="
         absolute
-        left-1/2
+        left-2/3
         bottom-[-32px]
         z-30
         -translate-x-1/2
@@ -4041,169 +4059,174 @@ document.addEventListener("DOMContentLoaded", () => {
 
   };
 
+/* =======================================================
+   DESKTOP HOVER ONLY
+   На мобильных устройствах hover полностью отключён
+   ======================================================= */
 
-  /* =======================================================
-     INSTAGRAM HOVER
-  ======================================================= */
-
-  instagram.addEventListener("mouseenter", () => {
-
-    instagramHover = true;
-
-    const x =
-      parseFloat(instagram.dataset.x || 0);
-
-    const y =
-      parseFloat(instagram.dataset.y || 0);
-
-    const rotate =
-      parseFloat(instagram.dataset.rotate || -6);
+const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
 
 
-    /*
-      Stage 1:
-      card moves outward
-    */
+/* =======================================================
+   INSTAGRAM HOVER
+======================================================= */
 
-    instagram.style.transform =
-      `translate3d(
-        ${x - 35}px,
-        ${y - 8}px,
-        0
-      )
-      rotate(${rotate - 2}deg)
-      translateZ(35px)
-      scale(1.025)`;
+instagram.addEventListener("mouseenter", () => {
 
+  // На мобильных ничего не делаем
+  if (!isDesktop()) return;
 
-    /*
-      Stage 2:
-      after 80ms card rises above
-      the other card
-    */
+  instagramHover = true;
 
-    requestAnimationFrame(() => {
+  const x =
+    parseFloat(instagram.dataset.x || 0);
 
-      instagram.style.transform =
-        `translate3d(
-          ${x - 50}px,
-          ${y - 12}px,
-          110px
-        )
-        rotate(${rotate - 1}deg)
-        scale(1.035)`;
+  const y =
+    parseFloat(instagram.dataset.y || 0);
 
-    });
-
-  });
+  const rotate =
+    parseFloat(instagram.dataset.rotate || -6);
 
 
-  instagram.addEventListener("mouseleave", () => {
+  /* Stage 1 — карточка сначала выходит в сторону */
 
-    instagramHover = false;
+  instagram.style.transform =
+    `translate3d(
+      ${x - 35}px,
+      ${y - 8}px,
+      35px
+    )
+    rotate(${rotate - 2}deg)
+    scale(1.025)`;
 
-    const x =
-      parseFloat(instagram.dataset.x || 0);
 
-    const y =
-      parseFloat(instagram.dataset.y || 0);
+  /* Stage 2 — затем выходит поверх второй */
 
-    const rotate =
-      parseFloat(instagram.dataset.rotate || -6);
+  requestAnimationFrame(() => {
 
+    if (!isDesktop()) return;
 
     instagram.style.transform =
       `translate3d(
-        ${x}px,
-        ${y}px,
-        0
+        ${x - 50}px,
+        ${y - 12}px,
+        110px
       )
-      rotate(${rotate}deg)
-      scale(1)`;
+      rotate(${rotate - 1}deg)
+      scale(1.035)`;
 
   });
 
-
-  /* =======================================================
-     TIKTOK HOVER
-  ======================================================= */
-
-  tiktok.addEventListener("mouseenter", () => {
-
-    tiktokHover = true;
-
-    const x =
-      parseFloat(tiktok.dataset.x || 0);
-
-    const y =
-      parseFloat(tiktok.dataset.y || 0);
-
-    const rotate =
-      parseFloat(tiktok.dataset.rotate || 6);
+});
 
 
-    /*
-      Stage 1:
-      card moves outward
-    */
+instagram.addEventListener("mouseleave", () => {
+
+  if (!isDesktop()) return;
+
+  instagramHover = false;
+
+  const x =
+    parseFloat(instagram.dataset.x || 0);
+
+  const y =
+    parseFloat(instagram.dataset.y || 0);
+
+  const rotate =
+    parseFloat(instagram.dataset.rotate || -6);
+
+
+  instagram.style.transform =
+    `translate3d(
+      ${x}px,
+      ${y}px,
+      0
+    )
+    rotate(${rotate}deg)
+    scale(1)`;
+
+});
+
+
+/* =======================================================
+   TIKTOK HOVER
+======================================================= */
+
+tiktok.addEventListener("mouseenter", () => {
+
+  // На мобильных ничего не делаем
+  if (!isDesktop()) return;
+
+  tiktokHover = true;
+
+  const x =
+    parseFloat(tiktok.dataset.x || 0);
+
+  const y =
+    parseFloat(tiktok.dataset.y || 0);
+
+  const rotate =
+    parseFloat(tiktok.dataset.rotate || 6);
+
+
+  /* Stage 1 — карточка сначала выходит в сторону */
+
+  tiktok.style.transform =
+    `translate3d(
+      ${x + 35}px,
+      ${y - 8}px,
+      35px
+    )
+    rotate(${rotate + 2}deg)
+    scale(1.025)`;
+
+
+  /* Stage 2 — затем выходит поверх Instagram */
+
+  requestAnimationFrame(() => {
+
+    if (!isDesktop()) return;
 
     tiktok.style.transform =
       `translate3d(
-        ${x + 35}px,
-        ${y - 8}px,
-        0
+        ${x + 50}px,
+        ${y - 12}px,
+        110px
       )
-      rotate(${rotate + 2}deg)
-      translateZ(35px)
-      scale(1.025)`;
-
-
-    /*
-      Stage 2:
-      card rises above Instagram
-    */
-
-    requestAnimationFrame(() => {
-
-      tiktok.style.transform =
-        `translate3d(
-          ${x + 50}px,
-          ${y - 12}px,
-          110px
-        )
-        rotate(${rotate + 1}deg)
-        scale(1.035)`;
-
-    });
+      rotate(${rotate + 1}deg)
+      scale(1.035)`;
 
   });
 
-
-  tiktok.addEventListener("mouseleave", () => {
-
-    tiktokHover = false;
-
-    const x =
-      parseFloat(tiktok.dataset.x || 0);
-
-    const y =
-      parseFloat(tiktok.dataset.y || 0);
-
-    const rotate =
-      parseFloat(tiktok.dataset.rotate || 6);
+});
 
 
-    tiktok.style.transform =
-      `translate3d(
-        ${x}px,
-        ${y}px,
-        0
-      )
-      rotate(${rotate}deg)
-      scale(1)`;
+tiktok.addEventListener("mouseleave", () => {
 
-  });
+  if (!isDesktop()) return;
 
+  tiktokHover = false;
+
+  const x =
+    parseFloat(tiktok.dataset.x || 0);
+
+  const y =
+    parseFloat(tiktok.dataset.y || 0);
+
+  const rotate =
+    parseFloat(tiktok.dataset.rotate || 6);
+
+
+  tiktok.style.transform =
+    `translate3d(
+      ${x}px,
+      ${y}px,
+      0
+    )
+    rotate(${rotate}deg)
+    scale(1)`;
+
+});
 
   /* =======================================================
      SCROLL + RESIZE
@@ -4227,5 +4250,272 @@ document.addEventListener("DOMContentLoaded", () => {
   ======================================================= */
 
   updateSocialCards();
+
+});
+
+
+
+
+/* =========================================================
+   SHOKOL — 3D PRINT TEXT
+   Печать текста снизу вверх
+   Каждый слой идёт в противоположную сторону
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const title = document.getElementById("shokolHeroTitle");
+
+  if (!title) return;
+
+
+  /*
+    Находим строки текста.
+  */
+
+  const lines = title.querySelectorAll(".shokol-print-line");
+
+  if (!lines.length) return;
+
+
+  /*
+    Сначала полностью скрываем текст.
+  */
+
+  lines.forEach((line) => {
+
+    line.style.opacity = "0";
+
+  });
+
+
+  /*
+    Даём браузеру отрисовать начальное состояние.
+  */
+
+  requestAnimationFrame(() => {
+
+    /*
+      Получаем реальные размеры заголовка.
+    */
+
+    const rect = title.getBoundingClientRect();
+
+    const totalHeight = rect.height;
+
+
+    /*
+      Количество слоёв.
+
+      Чем больше число —
+      тем больше ощущение настоящей
+      послойной 3D-печати.
+    */
+
+    const layerHeight = 2;
+
+    const layers = Math.ceil(totalHeight / layerHeight);
+
+
+    /*
+      Создаём слои печати.
+    */
+
+    for (let i = 0; i < layers; i++) {
+
+      const layer = document.createElement("div");
+
+      layer.className =
+        "shokol-print-layer molten " +
+        (i % 2 === 0
+          ? "left-to-right"
+          : "right-to-left");
+
+
+      /*
+        Нижний слой должен печататься первым.
+
+        Поэтому визуально начинаем
+        именно снизу.
+      */
+
+      const bottomOffset =
+        i * layerHeight;
+
+
+      layer.style.bottom =
+        `${bottomOffset}px`;
+
+
+      /*
+        Каждый следующий слой немного позже.
+      */
+
+      layer.style.animationDelay =
+        `${i * 18}ms`;
+
+
+      /*
+        Добавляем слой.
+      */
+
+      title.appendChild(layer);
+
+    }
+
+
+    /*
+      Включаем текст постепенно.
+    */
+
+    const startTime =
+      performance.now();
+
+
+    /*
+      Общая продолжительность печати.
+    */
+
+    const duration = 2400;
+
+
+    /*
+      Анимационный цикл.
+    */
+
+    const animate = (currentTime) => {
+
+      const elapsed =
+        currentTime - startTime;
+
+
+      const progress =
+        Math.min(elapsed / duration, 1);
+
+
+      /*
+        Сглаживание.
+      */
+
+      const eased =
+        1 - Math.pow(1 - progress, 3);
+
+
+      /*
+        Открываем текст снизу вверх
+        через clip-path.
+      */
+
+      const visibleHeight =
+        eased * 100;
+
+
+      title.style.clipPath =
+        `inset(
+          ${100 - visibleHeight}%
+          0
+          0
+          0
+        )`;
+
+
+      /*
+        Сами буквы постепенно
+        превращаются из "сырого"
+        состояния в готовое изделие.
+      */
+
+      lines.forEach((line, index) => {
+
+        const lineProgress =
+          Math.max(
+            0,
+            Math.min(
+              1,
+              (progress - index * 0.08) / 0.45
+            )
+          );
+
+
+        const lineEased =
+          1 - Math.pow(1 - lineProgress, 3);
+
+
+        line.style.opacity =
+          lineEased;
+
+
+        line.style.transform =
+          `
+            translate3d(
+              0,
+              ${(1 - lineEased) * 10}px,
+              0
+            )
+            scaleY(${0.94 + lineEased * 0.06})
+          `;
+
+
+        line.style.filter =
+          `blur(${(1 - lineEased) * 2}px)`;
+
+      });
+
+
+      /*
+        Пока печатаем —
+        продолжаем кадры.
+      */
+
+      if (progress < 1) {
+
+        requestAnimationFrame(animate);
+
+      } else {
+
+        /*
+          Печать завершена.
+        */
+
+        title.style.clipPath =
+          "inset(0 0 0 0)";
+
+
+        title.classList.add(
+          "shokol-print-complete"
+        );
+
+
+        /*
+          Удаляем печатающие линии
+          после завершения.
+
+          Они нужны только для анимации.
+        */
+
+        setTimeout(() => {
+
+          title
+            .querySelectorAll(".shokol-print-layer")
+            .forEach((layer) => {
+
+              layer.remove();
+
+            });
+
+        }, 500);
+
+      }
+
+    };
+
+
+    /*
+      Запускаем печать.
+    */
+
+    requestAnimationFrame(animate);
+
+  });
 
 });

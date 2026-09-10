@@ -796,3 +796,193 @@ body {
   }
 }
 
+
+
+
+/* =========================================================
+   SHOKOL — 3D PRINT TEXT
+   NO ELEMENTS OUTSIDE LETTERS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const title =
+    document.getElementById("shokolHeroTitle");
+
+  if (!title) return;
+
+
+  const lines =
+    title.querySelectorAll(".shokol-print-line");
+
+  if (!lines.length) return;
+
+
+  /*
+    Сначала полностью скрываем текст.
+  */
+
+  lines.forEach((line) => {
+
+    line.style.opacity = "0";
+
+    line.style.transform =
+      "translateY(8px) scaleY(0.94)";
+
+    line.style.filter =
+      "blur(1.5px)";
+
+  });
+
+
+  /*
+    Запускаем после первого paint.
+  */
+
+  requestAnimationFrame(() => {
+
+    requestAnimationFrame(() => {
+
+      const duration = 2400;
+
+      const start =
+        performance.now();
+
+
+      /*
+        Анимация.
+      */
+
+      const animate = (time) => {
+
+        const elapsed =
+          time - start;
+
+
+        const progress =
+          Math.min(
+            elapsed / duration,
+            1
+          );
+
+
+        /*
+          Плавное начало / конец.
+        */
+
+        const eased =
+          progress < 0.5
+
+            ? 2 * progress * progress
+
+            : 1 -
+              Math.pow(
+                -2 * progress + 2,
+                2
+              ) / 2;
+
+
+        /*
+          Каждая строка появляется
+          немного с задержкой.
+        */
+
+        lines.forEach((line, index) => {
+
+          const delay =
+            index * 0.12;
+
+
+          const lineProgress =
+            Math.max(
+              0,
+              Math.min(
+                1,
+                (eased - delay) /
+                (1 - delay)
+              )
+            );
+
+
+          /*
+            Плавное появление.
+          */
+
+          const opacity =
+            lineProgress;
+
+
+          /*
+            Небольшое вертикальное
+            "наращивание".
+          */
+
+          const y =
+            (1 - lineProgress) * 8;
+
+
+          const scale =
+            0.94 +
+            lineProgress * 0.06;
+
+
+          const blur =
+            (1 - lineProgress) * 1.5;
+
+
+          line.style.opacity =
+            opacity;
+
+
+          line.style.transform =
+            `
+              translateY(${y}px)
+              scaleY(${scale})
+            `;
+
+
+          line.style.filter =
+            `blur(${blur}px)`;
+
+        });
+
+
+        if (progress < 1) {
+
+          requestAnimationFrame(animate);
+
+        } else {
+
+          /*
+            Финальное состояние.
+          */
+
+          lines.forEach((line) => {
+
+            line.style.opacity = "1";
+
+            line.style.transform =
+              "translateY(0) scaleY(1)";
+
+            line.style.filter =
+              "blur(0)";
+
+          });
+
+
+          title.classList.add(
+            "shokol-print-complete"
+          );
+
+        }
+
+      };
+
+
+      requestAnimationFrame(animate);
+
+    });
+
+  });
+
+});
