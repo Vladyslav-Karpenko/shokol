@@ -951,17 +951,28 @@ body {
 
 }
 
-
 /* ======================================================
-   PREMIUM SCROLL REVEAL
+   SHOKOL — ULTRA SMOOTH SCROLL REVEAL
 ====================================================== */
 
 .reveal {
   opacity: 0;
-  transform: translateY(45px);
+
+  transform:
+    translate3d(0, 70px, 0)
+    scale(0.97);
+
+  filter: blur(4px);
+
   transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change:
+    opacity,
+    transform,
+    filter;
 }
 
 
@@ -971,16 +982,21 @@ body {
 
 .reveal.reveal-visible {
   opacity: 1;
-  transform: translateY(0);
+
+  transform:
+    translate3d(0, 0, 0)
+    scale(1);
+
+  filter: blur(0);
 }
 
 
 /* ======================================================
-   SOCIAL CARDS — SLIGHTLY MORE PREMIUM
+   SOCIAL BLOCK
 ====================================================== */
 
 .reveal-social {
-  transition-delay: 0.08s;
+  transition-delay: 0.12s;
 }
 
 
@@ -990,8 +1006,17 @@ body {
 
 @media (max-width: 639px) {
 
-  .reveal-social {
-    transition-duration: 1s;
+  .reveal {
+    transform:
+      translate3d(0, 45px, 0)
+      scale(0.985);
+
+    filter: blur(3px);
+
+    transition:
+      opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1.45s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
 }
@@ -1003,10 +1028,10 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
 
-  .reveal,
-  .reveal-social {
+  .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
     transition: none;
   }
 
