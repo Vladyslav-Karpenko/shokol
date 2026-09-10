@@ -270,7 +270,7 @@ document.querySelector('#app').innerHTML = `
     text-[3rem]
     font-black
     leading-[0.9]
-    tracking-[-0.04em]
+    tracking-[0.01em]
     sm:text-6xl
     lg:text-8xl
   "
