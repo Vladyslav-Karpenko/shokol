@@ -800,189 +800,214 @@ body {
 
 
 /* =========================================================
-   SHOKOL — 3D PRINT TEXT
-   NO ELEMENTS OUTSIDE LETTERS
+   SHOKOL — PREMIUM 3D HERO TITLE
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+.shokol-3d-title {
+  position: relative;
 
-  const title =
-    document.getElementById("shokolHeroTitle");
+  transform-style: preserve-3d;
 
-  if (!title) return;
+  color: #ffffff;
 
+  text-shadow:
+    1px 1px 0 #d4d4d4,
+    2px 2px 0 #a3a3a3,
+    3px 3px 0 #737373,
+    4px 4px 0 #404040,
+    5px 5px 0 #1f1f1f,
+    7px 7px 18px rgba(0, 0, 0, 0.65);
 
-  const lines =
-    title.querySelectorAll(".shokol-print-line");
+  transition:
+    transform 500ms cubic-bezier(.2,.8,.2,1),
+    text-shadow 500ms ease;
+}
 
-  if (!lines.length) return;
 
+/* =========================================================
+   EACH LINE
+========================================================= */
 
-  /*
-    Сначала полностью скрываем текст.
-  */
+.shokol-3d-line {
+  display: block;
 
-  lines.forEach((line) => {
+  position: relative;
 
-    line.style.opacity = "0";
+  transform-style: preserve-3d;
 
-    line.style.transform =
-      "translateY(8px) scaleY(0.94)";
+  transition:
+    transform 500ms cubic-bezier(.2,.8,.2,1),
+    text-shadow 500ms ease;
+}
 
-    line.style.filter =
-      "blur(1.5px)";
 
-  });
+/* =========================================================
+   ORANGE 3D TEXT
+========================================================= */
 
+.shokol-3d-orange {
+  color: #f97316;
 
-  /*
-    Запускаем после первого paint.
-  */
+  text-shadow:
+    1px 1px 0 #d85f0b,
+    2px 2px 0 #b94e08,
+    3px 3px 0 #8f3b06,
+    4px 4px 0 #652a05,
+    5px 5px 0 #3d1a04,
+    7px 7px 20px rgba(249, 115, 22, 0.18);
+}
 
-  requestAnimationFrame(() => {
 
-    requestAnimationFrame(() => {
+/* =========================================================
+   SUBTLE HOVER
+========================================================= */
 
-      const duration = 2400;
+.shokol-3d-title:hover {
+  transform:
+    perspective(900px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateZ(4px);
 
-      const start =
-        performance.now();
+  text-shadow:
+    1px 1px 0 #d4d4d4,
+    2px 2px 0 #a3a3a3,
+    3px 3px 0 #737373,
+    4px 4px 0 #404040,
+    6px 6px 0 #1f1f1f,
+    10px 12px 25px rgba(0, 0, 0, 0.7);
+}
 
 
-      /*
-        Анимация.
-      */
+.shokol-3d-title:hover .shokol-3d-orange {
+  transform: translateZ(8px);
+}
 
-      const animate = (time) => {
 
-        const elapsed =
-          time - start;
+/* =========================================================
+   MOBILE — KEEP IT CLEAN
+========================================================= */
 
+/* =========================================================
+   MOBILE — CENTERED 3D HERO TITLE
+========================================================= */
 
-        const progress =
-          Math.min(
-            elapsed / duration,
-            1
-          );
+@media (max-width: 640px) {
 
+  .shokol-3d-title {
+    width: 100%;
+    max-width: 100%;
 
-        /*
-          Плавное начало / конец.
-        */
+    margin-left: auto;
+    margin-right: auto;
 
-        const eased =
-          progress < 0.5
+    text-align: center;
 
-            ? 2 * progress * progress
+    /* центрирование внутри родителя */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-            : 1 -
-              Math.pow(
-                -2 * progress + 2,
-                2
-              ) / 2;
+    /* немного компактнее 3D */
+    text-shadow:
+      1px 1px 0 #d4d4d4,
+      2px 2px 0 #a3a3a3,
+      3px 3px 0 #737373,
+      4px 4px 0 #404040,
+      5px 5px 10px rgba(0, 0, 0, 0.65);
+  }
 
 
-        /*
-          Каждая строка появляется
-          немного с задержкой.
-        */
+  .shokol-3d-line {
+    display: block;
 
-        lines.forEach((line, index) => {
+    width: 100%;
 
-          const delay =
-            index * 0.12;
+    text-align: center;
 
+    transform: translateZ(0);
+  }
 
-          const lineProgress =
-            Math.max(
-              0,
-              Math.min(
-                1,
-                (eased - delay) /
-                (1 - delay)
-              )
-            );
 
+  .shokol-3d-orange {
+    text-shadow:
+      1px 1px 0 #d85f0b,
+      2px 2px 0 #b94e08,
+      3px 3px 0 #8f3b06,
+      4px 4px 0 #652a05,
+      5px 5px 12px rgba(249, 115, 22, 0.18);
+  }
 
-          /*
-            Плавное появление.
-          */
 
-          const opacity =
-            lineProgress;
+  /* отключаем наклон на touch-устройствах */
+  .shokol-3d-title:hover {
+    transform: none;
+  }
 
+  .shokol-3d-title:hover .shokol-3d-orange {
+    transform: none;
+  }
 
-          /*
-            Небольшое вертикальное
-            "наращивание".
-          */
+}
 
-          const y =
-            (1 - lineProgress) * 8;
 
+/* ======================================================
+   PREMIUM SCROLL REVEAL
+====================================================== */
 
-          const scale =
-            0.94 +
-            lineProgress * 0.06;
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 
-          const blur =
-            (1 - lineProgress) * 1.5;
+/* ======================================================
+   VISIBLE
+====================================================== */
 
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-          line.style.opacity =
-            opacity;
 
+/* ======================================================
+   SOCIAL CARDS — SLIGHTLY MORE PREMIUM
+====================================================== */
 
-          line.style.transform =
-            `
-              translateY(${y}px)
-              scaleY(${scale})
-            `;
+.reveal-social {
+  transition-delay: 0.08s;
+}
 
 
-          line.style.filter =
-            `blur(${blur}px)`;
+/* ======================================================
+   MOBILE
+====================================================== */
 
-        });
+@media (max-width: 639px) {
 
+  .reveal-social {
+    transition-duration: 1s;
+  }
 
-        if (progress < 1) {
+}
 
-          requestAnimationFrame(animate);
 
-        } else {
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
 
-          /*
-            Финальное состояние.
-          */
+@media (prefers-reduced-motion: reduce) {
 
-          lines.forEach((line) => {
+  .reveal,
+  .reveal-social {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 
-            line.style.opacity = "1";
-
-            line.style.transform =
-              "translateY(0) scaleY(1)";
-
-            line.style.filter =
-              "blur(0)";
-
-          });
-
-
-          title.classList.add(
-            "shokol-print-complete"
-          );
-
-        }
-
-      };
-
-
-      requestAnimationFrame(animate);
-
-    });
-
-  });
-
-});
+}

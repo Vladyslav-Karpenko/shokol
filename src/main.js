@@ -264,13 +264,22 @@ document.querySelector('#app').innerHTML = `
 
   <h1
   id="shokolHeroTitle"
-  class="max-w-3xl text-[3rem] font-black leading-[0.9] tracking-[-0.04em] sm:text-6xl lg:text-8xl"
+  class="
+    shokol-3d-title
+    max-w-3xl
+    text-[3rem]
+    font-black
+    leading-[0.9]
+    tracking-[-0.04em]
+    sm:text-6xl
+    lg:text-8xl
+  "
 >
-  <span class="shokol-print-line">
+  <span class="shokol-3d-line">
     Tvoříme
   </span>
 
-  <span class="shokol-print-line text-orange-500">
+  <span class="shokol-3d-line shokol-3d-orange">
     ve 3D.
   </span>
 </h1>
@@ -377,7 +386,7 @@ document.querySelector('#app').innerHTML = `
 
   <div
     id="shokolSocialStage"
-    class="relative h-[1040px] w-full max-w-[680px] [perspective:1400px] sm:h-[660px]"
+    class="reveal-social relative h-[1040px] w-full max-w-[680px] [perspective:1400px] sm:h-[660px]"
   >
 
     <!-- ===================================================
@@ -2984,63 +2993,61 @@ if (contactForm) {
 // SCROLL REVEAL
 // ======================================================
 
-const revealElements =
-  document.querySelectorAll(
-    'section > div, article'
-  )
+const revealElements = document.querySelectorAll(
+  'section > div, article, .reveal-social'
+);
 
 
-revealElements.forEach(
-  (element) => {
+// ======================================================
+// INITIAL STATE
+// ======================================================
 
-    element.classList.add(
-      'reveal'
-    )
+revealElements.forEach((element) => {
 
+  element.classList.add('reveal');
+
+});
+
+
+// ======================================================
+// OBSERVER
+// ======================================================
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add(
+          'reveal-visible'
+        );
+
+        revealObserver.unobserve(
+          entry.target
+        );
+
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12,
   }
-)
+);
 
 
-const revealObserver =
-  new IntersectionObserver(
-    (entries) => {
+// ======================================================
+// START OBSERVING
+// ======================================================
 
-      entries.forEach(
-        (entry) => {
+revealElements.forEach((element) => {
 
-          if (
-            entry.isIntersecting
-          ) {
+  revealObserver.observe(element);
 
-            entry.target.classList.add(
-              'reveal-visible'
-            )
-
-            revealObserver.unobserve(
-              entry.target
-            )
-
-          }
-
-        }
-      )
-
-    },
-    {
-      threshold: 0.12,
-    }
-  )
-
-
-revealElements.forEach(
-  (element) => {
-
-    revealObserver.observe(
-      element
-    )
-
-  }
-)
+});
 
 
 // ======================================================
@@ -4256,266 +4263,3 @@ tiktok.addEventListener("mouseleave", () => {
 
 
 
-/* =========================================================
-   SHOKOL — 3D PRINT TEXT
-   Печать текста снизу вверх
-   Каждый слой идёт в противоположную сторону
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const title = document.getElementById("shokolHeroTitle");
-
-  if (!title) return;
-
-
-  /*
-    Находим строки текста.
-  */
-
-  const lines = title.querySelectorAll(".shokol-print-line");
-
-  if (!lines.length) return;
-
-
-  /*
-    Сначала полностью скрываем текст.
-  */
-
-  lines.forEach((line) => {
-
-    line.style.opacity = "0";
-
-  });
-
-
-  /*
-    Даём браузеру отрисовать начальное состояние.
-  */
-
-  requestAnimationFrame(() => {
-
-    /*
-      Получаем реальные размеры заголовка.
-    */
-
-    const rect = title.getBoundingClientRect();
-
-    const totalHeight = rect.height;
-
-
-    /*
-      Количество слоёв.
-
-      Чем больше число —
-      тем больше ощущение настоящей
-      послойной 3D-печати.
-    */
-
-    const layerHeight = 2;
-
-    const layers = Math.ceil(totalHeight / layerHeight);
-
-
-    /*
-      Создаём слои печати.
-    */
-
-    for (let i = 0; i < layers; i++) {
-
-      const layer = document.createElement("div");
-
-      layer.className =
-        "shokol-print-layer molten " +
-        (i % 2 === 0
-          ? "left-to-right"
-          : "right-to-left");
-
-
-      /*
-        Нижний слой должен печататься первым.
-
-        Поэтому визуально начинаем
-        именно снизу.
-      */
-
-      const bottomOffset =
-        i * layerHeight;
-
-
-      layer.style.bottom =
-        `${bottomOffset}px`;
-
-
-      /*
-        Каждый следующий слой немного позже.
-      */
-
-      layer.style.animationDelay =
-        `${i * 18}ms`;
-
-
-      /*
-        Добавляем слой.
-      */
-
-      title.appendChild(layer);
-
-    }
-
-
-    /*
-      Включаем текст постепенно.
-    */
-
-    const startTime =
-      performance.now();
-
-
-    /*
-      Общая продолжительность печати.
-    */
-
-    const duration = 2400;
-
-
-    /*
-      Анимационный цикл.
-    */
-
-    const animate = (currentTime) => {
-
-      const elapsed =
-        currentTime - startTime;
-
-
-      const progress =
-        Math.min(elapsed / duration, 1);
-
-
-      /*
-        Сглаживание.
-      */
-
-      const eased =
-        1 - Math.pow(1 - progress, 3);
-
-
-      /*
-        Открываем текст снизу вверх
-        через clip-path.
-      */
-
-      const visibleHeight =
-        eased * 100;
-
-
-      title.style.clipPath =
-        `inset(
-          ${100 - visibleHeight}%
-          0
-          0
-          0
-        )`;
-
-
-      /*
-        Сами буквы постепенно
-        превращаются из "сырого"
-        состояния в готовое изделие.
-      */
-
-      lines.forEach((line, index) => {
-
-        const lineProgress =
-          Math.max(
-            0,
-            Math.min(
-              1,
-              (progress - index * 0.08) / 0.45
-            )
-          );
-
-
-        const lineEased =
-          1 - Math.pow(1 - lineProgress, 3);
-
-
-        line.style.opacity =
-          lineEased;
-
-
-        line.style.transform =
-          `
-            translate3d(
-              0,
-              ${(1 - lineEased) * 10}px,
-              0
-            )
-            scaleY(${0.94 + lineEased * 0.06})
-          `;
-
-
-        line.style.filter =
-          `blur(${(1 - lineEased) * 2}px)`;
-
-      });
-
-
-      /*
-        Пока печатаем —
-        продолжаем кадры.
-      */
-
-      if (progress < 1) {
-
-        requestAnimationFrame(animate);
-
-      } else {
-
-        /*
-          Печать завершена.
-        */
-
-        title.style.clipPath =
-          "inset(0 0 0 0)";
-
-
-        title.classList.add(
-          "shokol-print-complete"
-        );
-
-
-        /*
-          Удаляем печатающие линии
-          после завершения.
-
-          Они нужны только для анимации.
-        */
-
-        setTimeout(() => {
-
-          title
-            .querySelectorAll(".shokol-print-layer")
-            .forEach((layer) => {
-
-              layer.remove();
-
-            });
-
-        }, 500);
-
-      }
-
-    };
-
-
-    /*
-      Запускаем печать.
-    */
-
-    requestAnimationFrame(animate);
-
-  });
-
-});
