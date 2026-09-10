@@ -385,9 +385,9 @@ document.querySelector('#app').innerHTML = `
   ====================================================== -->
 
   <div
-    id="shokolSocialStage"
-    class="reveal-social relative h-[1040px] w-full max-w-[680px] [perspective:1400px] sm:h-[660px]"
-  >
+  id="shokolSocialStage"
+  class="relative h-[1040px] w-full max-w-[680px] [perspective:1400px] sm:h-[800px]"
+>
 
     <!-- ===================================================
          BACKGROUND ATMOSPHERE
@@ -957,40 +957,38 @@ document.querySelector('#app').innerHTML = `
     ==================================================== -->
 
     <div
-      id="shokolBottomText"
-      class="
-        absolute
-        left-2/3
-        bottom-[-32px]
-        z-30
-        -translate-x-1/2
+  id="shokolBottomText"
+  class="
+    absolute
+    left-2/3
+    bottom-[-35px]
+    z-30
+    -translate-x-1/2
 
-        flex
-        items-center
-        justify-center
+    flex
+    items-center
+    justify-center
 
-        whitespace-nowrap
+    whitespace-nowrap
 
-        text-center
-        text-[9px]
-        font-semibold
-        uppercase
-        tracking-[0.18em]
-        text-white/35
+    text-center
+    text-[9px]
+    font-semibold
+    uppercase
+    tracking-[0.18em]
+    text-white/35
 
-        sm:bottom-[-36px]
-        sm:text-xs
-        sm:tracking-[0.22em]
-      "
-    >
+    sm:bottom-[-5px]
+    sm:text-xs
+    sm:tracking-[0.22em]
+  "
+>
+  <span>INSPIRUJTE SE S NÁMI</span>
 
-      <span>INSPIRUJTE SE S NÁMI</span>
-
-      <span class="ml-2 text-xl leading-none text-orange-500">
-        ♥
-      </span>
-
-    </div>
+  <span class="ml-2 text-xl leading-none text-orange-500">
+    ♥
+  </span>
+</div>
 
   </div>
 
