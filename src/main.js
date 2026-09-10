@@ -345,121 +345,629 @@ document.querySelector('#app').innerHTML = `
 
         </div>
 
+<!-- =========================================================
+     HERO RIGHT — SHOKOL PREMIUM 3D SOCIAL CARDS
+========================================================== -->
 
-        <!-- HERO RIGHT -->
+<div
+  class="relative flex min-h-[1080px] w-full items-center justify-center pt-8 sm:min-h-[680px] sm:pt-0 lg:min-h-[720px] lg:justify-end"
+>
 
-        <div
-          class="relative flex items-center justify-center pt-4 sm:pt-0 lg:justify-end"
-        >
+  <!-- =====================================================
+       SOCIAL STAGE
+  ====================================================== -->
 
-          <div
-            class="relative aspect-square w-full max-w-xl overflow-hidden rounded-4xl border border-white/10 bg-neutral-900 shadow-2xl"
-          >
+  <div
+    id="shokolSocialStage"
+    class="relative h-[1040px] w-full max-w-[680px] [perspective:1400px] sm:h-[660px]"
+  >
 
-            <div
-              class="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(249,115,22,0.18),transparent_45%)]"
-            ></div>
+    <!-- ===================================================
+         BACKGROUND ATMOSPHERE
+    ==================================================== -->
 
+    <div
+      class="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/[0.045] blur-[110px]"
+    ></div>
 
-            <div
-              id="heroProduct"
-              class="absolute inset-0 flex items-center justify-center"
-            >
-
-              <div
-                class="relative h-64 w-64 rounded-[2.5rem] border border-orange-500/20 bg-linear-to-br from-neutral-700 via-neutral-800 to-neutral-950 shadow-[0_35px_100px_rgba(0,0,0,0.65)] transition-transform duration-300 sm:h-96 sm:w-96"
-              >
-
-                <div
-                  class="absolute inset-6 rounded-[2.5rem] border border-white/5"
-                ></div>
-
-                <div
-                  class="absolute inset-10 rounded-4xl border border-white/5"
-                ></div>
-
-                <div
-                  class="absolute inset-14 rounded-3xl border border-orange-500/10"
-                ></div>
+    <div
+      class="pointer-events-none absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/[0.035] blur-[70px]"
+    ></div>
 
 
-                <div
-                  class="absolute inset-0 flex items-center justify-center"
-                >
+    <!-- ===================================================
+         FOLLOW TITLE
+    ==================================================== -->
 
-                  <div
-                    class="relative h-40 w-40 rounded-4xl border-2 border-orange-500/50 bg-neutral-900 shadow-[0_20px_60px_rgba(249,115,22,0.15)] sm:h-52 sm:w-52"
-                  >
+    <div
+      id="shokolFollowTitle"
+      class="absolute left-1/2 top-2 z-40 -translate-x-1/2 whitespace-nowrap text-center font-serif text-[30px] italic leading-[0.9] text-white sm:top-0 sm:text-[38px]"
+    >
 
-                    <div
-                      class="absolute inset-4 rounded-3xl border border-orange-500/20"
-                    ></div>
+      <div>Sledujte</div>
 
-                    <div
-                      class="absolute inset-8 rounded-xl border border-white/5"
-                    ></div>
+      <div>za námi!</div>
 
-                    <span
-                      class="absolute inset-0 flex items-center justify-center text-7xl font-black tracking-tighter text-white sm:text-8xl"
-                    >
-                      S
-                    </span>
+      <div
+        class="mt-3 translate-x-[42px] font-sans text-[46px] not-italic leading-none text-orange-500"
+      >
+        ↘
+      </div>
 
-                  </div>
-
-                </div>
+    </div>
 
 
-                <div
-                  class="absolute -bottom-6 -right-6 rounded-2xl border border-white/10 bg-neutral-950/95 px-5 py-4 shadow-2xl backdrop-blur-xl"
-                >
+    <!-- ===================================================
+         INSTAGRAM CARD
+    ==================================================== -->
 
-                  <div
-                    class="text-xs font-bold uppercase tracking-[0.2em] text-orange-500"
-                  >
-                    SHOKOL
-                  </div>
+    <a
+      id="shokolInstagramCard"
+      href="https://www.instagram.com/shokol.3dtisk"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram SHOKOL"
 
-                  <div class="mt-1 text-xs text-white/40">
-                    3D PRINT STUDIO
-                  </div>
+      class="
+        absolute
+        left-1/2
+        top-[175px]
+        z-10
 
-                </div>
+        flex
+        h-[400px]
+        w-[calc(100%-36px)]
+        max-w-[300px]
+        -translate-x-1/2
+
+        flex-col
+        items-center
+        justify-center
+
+        overflow-hidden
+
+        rounded-[2.4rem]
+
+        border
+        border-white/[0.16]
+
+        bg-black/[0.62]
+
+        shadow-[0_45px_100px_rgba(0,0,0,0.80)]
+
+        backdrop-blur-[18px]
+
+        transition-[transform,box-shadow,border-color]
+        duration-500
+        ease-out
+
+        hover:z-40
+        hover:border-orange-500/40
+        hover:shadow-[0_55px_120px_rgba(0,0,0,0.9),0_0_55px_rgba(249,115,22,0.12)]
+
+        sm:left-[3%]
+        sm:top-[155px]
+        sm:h-[485px]
+        sm:w-[315px]
+        sm:max-w-none
+        sm:translate-x-0
+
+        [transform-style:preserve-3d]
+        [will-change:transform]
+      "
+    >
+
+      <!-- =================================================
+           3D DEPTH — BACK PLATE
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute -bottom-3 left-3 right-3 top-3 -z-10 rounded-[2.4rem] border border-orange-500/[0.10] bg-black/[0.55] shadow-[0_25px_50px_rgba(0,0,0,0.75)]"
+      ></div>
 
 
-                <div
-                  class="absolute -left-5 top-10 rounded-xl border border-white/10 bg-neutral-950/95 px-4 py-3 shadow-xl backdrop-blur-xl"
-                >
+      <!-- =================================================
+           3D SIDE EDGE
+      ================================================== -->
 
-                  <div class="text-xs text-white/30">
-                    MATERIAL
-                  </div>
-
-                  <div class="mt-1 text-sm font-bold">
-                    PLA / PETG
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
+      <div
+        class="pointer-events-none absolute right-[-3px] top-5 h-[88%] w-[5px] rounded-full bg-gradient-to-b from-white/[0.08] via-orange-500/[0.08] to-black/40 blur-[1px]"
+      ></div>
 
 
-            <div
-              class="absolute inset-0 opacity-[0.04]"
-              style="
-                background-image:
-                  linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px);
-                background-size: 40px 40px;
-              "
-            ></div>
+      <!-- =================================================
+           GLASS BASE
+      ================================================== -->
 
-          </div>
+      <div
+        class="pointer-events-none absolute inset-0 rounded-[2.4rem] bg-gradient-to-br from-white/[0.065] via-transparent to-orange-500/[0.035]"
+      ></div>
 
-        </div>
 
+      <!-- =================================================
+           DIAGONAL GLASS REFLECTION
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute -left-[35%] -top-[15%] h-[70%] w-[85%] rotate-[25deg] bg-gradient-to-r from-transparent via-white/[0.055] to-transparent blur-[2px]"
+      ></div>
+
+
+      <!-- =================================================
+           TOP EDGE LIGHT
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute left-[8%] right-[8%] top-[1px] h-px bg-gradient-to-r from-transparent via-white/[0.18] to-transparent"
+      ></div>
+
+
+      <!-- =================================================
+           INNER FRAME
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute inset-[1px] rounded-[2.4rem] border border-white/[0.055]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute inset-[8px] rounded-[2rem] border border-white/[0.025]"
+      ></div>
+
+
+      <!-- =================================================
+           ORANGE AMBIENT LIGHT
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute bottom-[-100px] left-1/2 h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-orange-500/[0.07] blur-[80px]"
+      ></div>
+
+
+      <!-- =================================================
+     INSTAGRAM ICON — ORIGINAL COLORS
+================================================== -->
+
+<div
+  class="
+    relative
+    flex
+    h-[95px]
+    w-[95px]
+    items-center
+    justify-center
+    rounded-[1.7rem]
+
+    bg-gradient-to-br
+    from-[#FFD600]
+    via-[#FF0069]
+    to-[#833AB4]
+
+    shadow-[0_20px_45px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.25)]
+
+    transition-all
+    duration-500
+
+    sm:h-[125px]
+    sm:w-[125px]
+  "
+>
+
+  <!-- glass highlight -->
+
+  <div
+    class="pointer-events-none absolute inset-[2px] rounded-[1.6rem] border border-white/[0.18]"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute left-3 right-3 top-2 h-8 rounded-full bg-white/[0.12] blur-md"
+  ></div>
+
+
+  <!-- ORIGINAL INSTAGRAM SYMBOL -->
+
+  <svg
+    viewBox="0 0 24 24"
+    class="
+      relative
+      h-[58px]
+      w-[58px]
+      fill-none
+      stroke-white
+      stroke-[1.6]
+      drop-shadow-[0_4px_10px_rgba(0,0,0,0.35)]
+
+      sm:h-[76px]
+      sm:w-[76px]
+    "
+  >
+
+    <rect
+      x="3"
+      y="3"
+      width="18"
+      height="18"
+      rx="5"
+    ></rect>
+
+    <circle
+      cx="12"
+      cy="12"
+      r="4.2"
+    ></circle>
+
+    <circle
+      cx="17.4"
+      cy="6.7"
+      r="1"
+      fill="white"
+      stroke="none"
+    ></circle>
+
+  </svg>
+
+</div>
+
+
+      <!-- =================================================
+           INSTAGRAM TITLE
+      ================================================== -->
+
+      <div
+        class="relative mt-6 text-[30px] font-bold tracking-[-0.03em] text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] sm:mt-7 sm:text-[36px]"
+      >
+        Instagram
+      </div>
+
+
+      <!-- =================================================
+           DESCRIPTION
+      ================================================== -->
+
+      <div
+        class="relative mt-4 text-center text-[11px] font-semibold uppercase leading-[1.8] tracking-[0.16em] text-white/55 sm:mt-5 sm:text-sm sm:tracking-[0.18em]"
+      >
+
+        ZÁKULISÍ<br />
+        NOVÉ PROJEKTY<br />
+        INSPIRACE
+
+      </div>
+
+
+      <!-- =================================================
+           USERNAME
+      ================================================== -->
+
+      <div
+        class="relative mt-6 text-[10px] tracking-[0.15em] text-white/25 sm:mt-7 sm:text-[11px]"
+      >
+        @shokol.3dtisk
+      </div>
+
+
+      <!-- =================================================
+           BOTTOM EDGE
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute bottom-[10px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"
+      ></div>
+
+    </a>
+
+
+
+    <!-- ===================================================
+         TIKTOK CARD
+    ==================================================== -->
+
+    <a
+      id="shokolTikTokCard"
+      href="https://www.tiktok.com/@shokol.3dtisk"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="TikTok SHOKOL"
+
+      class="
+        absolute
+        left-1/2
+        top-[615px]
+        z-20
+
+        flex
+        h-[400px]
+        w-[calc(100%-36px)]
+        max-w-[300px]
+        -translate-x-1/2
+
+        flex-col
+        items-center
+        justify-center
+
+        overflow-hidden
+
+        rounded-[2.4rem]
+
+        border
+        border-white/[0.16]
+
+        bg-black/[0.64]
+
+        shadow-[0_45px_100px_rgba(0,0,0,0.82)]
+
+        backdrop-blur-[18px]
+
+        transition-[transform,box-shadow,border-color]
+        duration-500
+        ease-out
+
+        hover:z-40
+        hover:border-orange-500/40
+        hover:shadow-[0_55px_120px_rgba(0,0,0,0.9),0_0_55px_rgba(249,115,22,0.12)]
+
+        sm:left-auto
+        sm:right-[3%]
+        sm:top-[210px]
+        sm:h-[485px]
+        sm:w-[315px]
+        sm:max-w-none
+        sm:translate-x-0
+
+        [transform-style:preserve-3d]
+        [will-change:transform]
+      "
+    >
+
+      <!-- =================================================
+           3D DEPTH — BACK PLATE
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute -bottom-3 left-3 right-3 top-3 -z-10 rounded-[2.4rem] border border-orange-500/[0.10] bg-black/[0.55] shadow-[0_25px_50px_rgba(0,0,0,0.75)]"
+      ></div>
+
+
+      <!-- =================================================
+           3D SIDE EDGE
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute left-[-3px] top-5 h-[88%] w-[5px] rounded-full bg-gradient-to-b from-white/[0.08] via-orange-500/[0.08] to-black/40 blur-[1px]"
+      ></div>
+
+
+      <!-- =================================================
+           GLASS BASE
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute inset-0 rounded-[2.4rem] bg-gradient-to-br from-white/[0.055] via-transparent to-orange-500/[0.035]"
+      ></div>
+
+
+      <!-- =================================================
+           DIAGONAL GLASS REFLECTION
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute -right-[35%] -top-[15%] h-[70%] w-[85%] rotate-[-25deg] bg-gradient-to-r from-transparent via-white/[0.045] to-transparent blur-[2px]"
+      ></div>
+
+
+      <!-- =================================================
+           TOP EDGE LIGHT
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute left-[8%] right-[8%] top-[1px] h-px bg-gradient-to-r from-transparent via-white/[0.18] to-transparent"
+      ></div>
+
+
+      <!-- =================================================
+           INNER FRAME
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute inset-[1px] rounded-[2.4rem] border border-white/[0.055]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute inset-[8px] rounded-[2rem] border border-white/[0.025]"
+      ></div>
+
+
+      <!-- =================================================
+           ORANGE AMBIENT LIGHT
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute bottom-[-100px] left-1/2 h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-orange-500/[0.06] blur-[80px]"
+      ></div>
+
+
+      <!-- =================================================
+     TIKTOK ICON — ORIGINAL COLORS
+================================================== -->
+
+<div
+  class="
+    relative
+    flex
+    h-[95px]
+    w-[95px]
+    items-center
+    justify-center
+    rounded-[1.7rem]
+
+    bg-black
+
+    border
+    border-white/[0.10]
+
+    shadow-[0_20px_45px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.12)]
+
+    transition-all
+    duration-500
+
+    sm:h-[125px]
+    sm:w-[125px]
+  "
+>
+
+  <!-- glass highlight -->
+
+  <div
+    class="pointer-events-none absolute inset-[2px] rounded-[1.6rem] border border-white/[0.08]"
+  ></div>
+
+
+  <!-- subtle reflection -->
+
+  <div
+    class="pointer-events-none absolute left-3 right-3 top-2 h-8 rounded-full bg-white/[0.05] blur-md"
+  ></div>
+
+
+  <!-- ORIGINAL TIKTOK LOGO -->
+
+  <svg
+    viewBox="0 0 24 24"
+    class="
+      relative
+      h-[62px]
+      w-[62px]
+
+      sm:h-[80px]
+      sm:w-[80px]
+
+      drop-shadow-[0_5px_12px_rgba(0,0,0,0.55)]
+    "
+  >
+
+    <!-- cyan offset -->
+
+    <path
+      fill="#25F4EE"
+      d="M14 3h3c.3 2 1.5 3.4 3.5 4v3.1c-1.5-.1-2.8-.6-4-1.4V15c0 3.6-2.7 6-6.3 6C6.8 21 4 18.7 4 15.5c0-3.3 2.7-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.7-.2-1-.2-1.7 0-3 1.1-3 2.7s1.3 2.6 3 2.6c1.8 0 3-1.1 3-3.3V3z"
+      transform="translate(-0.8,0)"
+    ></path>
+
+
+    <!-- pink offset -->
+
+    <path
+      fill="#FE2C55"
+      d="M14 3h3c.3 2 1.5 3.4 3.5 4v3.1c-1.5-.1-2.8-.6-4-1.4V15c0 3.6-2.7 6-6.3 6C6.8 21 4 18.7 4 15.5c0-3.3 2.7-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.7-.2-1-.2-1.7 0-3 1.1-3 2.7s1.3 2.6 3 2.6c1.8 0 3-1.1 3-3.3V3z"
+      transform="translate(0.8,0)"
+    ></path>
+
+
+    <!-- main white logo -->
+
+    <path
+      fill="white"
+      d="M14 3h3c.3 2 1.5 3.4 3.5 4v3.1c-1.5-.1-2.8-.6-4-1.4V15c0 3.6-2.7 6-6.3 6C6.8 21 4 18.7 4 15.5c0-3.3 2.7-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.7-.2-1-.2-1.7 0-3 1.1-3 2.7s1.3 2.6 3 2.6c1.8 0 3-1.1 3-3.3V3z"
+    ></path>
+
+  </svg>
+
+</div>
+
+
+      <!-- =================================================
+           TIKTOK TITLE
+      ================================================== -->
+
+      <div
+        class="relative mt-6 text-[30px] font-bold tracking-[-0.03em] text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] sm:mt-7 sm:text-[36px]"
+      >
+        TikTok
+      </div>
+
+
+      <!-- =================================================
+           DESCRIPTION
+      ================================================== -->
+
+      <div
+        class="relative mt-4 text-center text-[11px] font-semibold uppercase leading-[1.8] tracking-[0.16em] text-white/55 sm:mt-5 sm:text-sm sm:tracking-[0.18em]"
+      >
+
+        VIDEA Z VÝROBY<br />
+        PROCESY<br />
+        HOTOVÉ VÝROBKY
+
+      </div>
+
+
+      <!-- =================================================
+           USERNAME
+      ================================================== -->
+
+      <div
+        class="relative mt-6 text-[10px] tracking-[0.15em] text-white/25 sm:mt-7 sm:text-[11px]"
+      >
+        @shokol.3dtisk
+      </div>
+
+
+      <!-- =================================================
+           BOTTOM EDGE
+      ================================================== -->
+
+      <div
+        class="pointer-events-none absolute bottom-[10px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"
+      ></div>
+
+    </a>
+
+
+    <!-- ===================================================
+         BOTTOM TEXT
+    ==================================================== -->
+
+    <div
+      id="shokolBottomText"
+      class="
+        absolute
+        left-1/2
+        bottom-[-32px]
+        z-30
+        -translate-x-1/2
+
+        flex
+        items-center
+        justify-center
+
+        whitespace-nowrap
+
+        text-center
+        text-[9px]
+        font-semibold
+        uppercase
+        tracking-[0.18em]
+        text-white/35
+
+        sm:bottom-[-36px]
+        sm:text-xs
+        sm:tracking-[0.22em]
+      "
+    >
+
+      <span>INSPIRUJTE SE S NÁMI</span>
+
+      <span class="ml-2 text-xl leading-none text-orange-500">
+        ♥
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
       </div>
 
     </section>
@@ -3336,3 +3844,388 @@ if (photoButton) {
   )
 
 }
+
+/* =========================================================
+   SHOKOL — HERO SOCIAL CARDS
+   SCROLL + PREMIUM 3D HOVER
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const stage = document.getElementById("shokolSocialStage");
+  const instagram = document.getElementById("shokolInstagramCard");
+  const tiktok = document.getElementById("shokolTikTokCard");
+  const followTitle = document.getElementById("shokolFollowTitle");
+  const bottomText = document.getElementById("shokolBottomText");
+
+  if (
+    !stage ||
+    !instagram ||
+    !tiktok ||
+    !followTitle ||
+    !bottomText
+  ) {
+    return;
+  }
+
+
+  /* =======================================================
+     STATE
+  ======================================================= */
+
+  let ticking = false;
+
+  let instagramHover = false;
+  let tiktokHover = false;
+
+
+  /* =======================================================
+     HELPERS
+  ======================================================= */
+
+  const clamp = (value, min, max) => {
+    return Math.min(Math.max(value, min), max);
+  };
+
+
+  /* =======================================================
+     SCROLL ANIMATION
+  ======================================================= */
+
+  const updateSocialCards = () => {
+
+    ticking = false;
+
+    const rect = stage.getBoundingClientRect();
+
+    const viewportHeight = window.innerHeight;
+
+
+    const progress = clamp(
+      (viewportHeight - rect.top) /
+      (viewportHeight + rect.height),
+      0,
+      1
+    );
+
+
+    const centerProgress = clamp(
+      (progress - 0.22) / 0.55,
+      0,
+      1
+    );
+
+
+    const smooth =
+      centerProgress *
+      centerProgress *
+      (3 - 2 * centerProgress);
+
+
+    /*
+      Instagram base position
+    */
+
+    const instagramX = -smooth * 22;
+    const instagramY = -smooth * 28;
+
+    const instagramRotate = -6 - smooth * 2;
+
+
+    /*
+      TikTok base position
+    */
+
+    const tiktokX = smooth * 22;
+    const tiktokY = smooth * 25;
+
+    const tiktokRotate = 6 + smooth * 2;
+
+
+    /*
+      Save values on elements.
+
+      Hover animation will use these values
+      instead of destroying scroll animation.
+    */
+
+    instagram.dataset.x = instagramX;
+    instagram.dataset.y = instagramY;
+    instagram.dataset.rotate = instagramRotate;
+
+    tiktok.dataset.x = tiktokX;
+    tiktok.dataset.y = tiktokY;
+    tiktok.dataset.rotate = tiktokRotate;
+
+
+    /*
+      Apply base transform only when
+      the card isn't being hovered.
+    */
+
+    if (!instagramHover) {
+
+      instagram.style.transform =
+        `translate3d(
+          ${instagramX}px,
+          ${instagramY}px,
+          0
+        )
+        rotate(${instagramRotate}deg)`;
+
+    }
+
+
+    if (!tiktokHover) {
+
+      tiktok.style.transform =
+        `translate3d(
+          ${tiktokX}px,
+          ${tiktokY}px,
+          0
+        )
+        rotate(${tiktokRotate}deg)`;
+
+    }
+
+
+    /* =====================================================
+       FOLLOW TITLE
+    ====================================================== */
+
+    const titleY = -smooth * 35;
+
+    const titleOpacity =
+      1 - smooth * 0.25;
+
+
+    followTitle.style.transform =
+      `translate3d(-50%, ${titleY}px, 0)`;
+
+    followTitle.style.opacity =
+      titleOpacity;
+
+
+    /* =====================================================
+       BOTTOM TEXT
+    ====================================================== */
+
+    const bottomY = smooth * 20;
+
+
+    bottomText.style.transform =
+      `translate3d(-50%, ${bottomY}px, 0)`;
+
+
+    bottomText.style.opacity =
+      0.65 + smooth * 0.35;
+
+  };
+
+
+  /* =======================================================
+     REQUEST ANIMATION FRAME
+  ======================================================= */
+
+  const requestUpdate = () => {
+
+    if (!ticking) {
+
+      window.requestAnimationFrame(
+        updateSocialCards
+      );
+
+      ticking = true;
+
+    }
+
+  };
+
+
+  /* =======================================================
+     INSTAGRAM HOVER
+  ======================================================= */
+
+  instagram.addEventListener("mouseenter", () => {
+
+    instagramHover = true;
+
+    const x =
+      parseFloat(instagram.dataset.x || 0);
+
+    const y =
+      parseFloat(instagram.dataset.y || 0);
+
+    const rotate =
+      parseFloat(instagram.dataset.rotate || -6);
+
+
+    /*
+      Stage 1:
+      card moves outward
+    */
+
+    instagram.style.transform =
+      `translate3d(
+        ${x - 35}px,
+        ${y - 8}px,
+        0
+      )
+      rotate(${rotate - 2}deg)
+      translateZ(35px)
+      scale(1.025)`;
+
+
+    /*
+      Stage 2:
+      after 80ms card rises above
+      the other card
+    */
+
+    requestAnimationFrame(() => {
+
+      instagram.style.transform =
+        `translate3d(
+          ${x - 50}px,
+          ${y - 12}px,
+          110px
+        )
+        rotate(${rotate - 1}deg)
+        scale(1.035)`;
+
+    });
+
+  });
+
+
+  instagram.addEventListener("mouseleave", () => {
+
+    instagramHover = false;
+
+    const x =
+      parseFloat(instagram.dataset.x || 0);
+
+    const y =
+      parseFloat(instagram.dataset.y || 0);
+
+    const rotate =
+      parseFloat(instagram.dataset.rotate || -6);
+
+
+    instagram.style.transform =
+      `translate3d(
+        ${x}px,
+        ${y}px,
+        0
+      )
+      rotate(${rotate}deg)
+      scale(1)`;
+
+  });
+
+
+  /* =======================================================
+     TIKTOK HOVER
+  ======================================================= */
+
+  tiktok.addEventListener("mouseenter", () => {
+
+    tiktokHover = true;
+
+    const x =
+      parseFloat(tiktok.dataset.x || 0);
+
+    const y =
+      parseFloat(tiktok.dataset.y || 0);
+
+    const rotate =
+      parseFloat(tiktok.dataset.rotate || 6);
+
+
+    /*
+      Stage 1:
+      card moves outward
+    */
+
+    tiktok.style.transform =
+      `translate3d(
+        ${x + 35}px,
+        ${y - 8}px,
+        0
+      )
+      rotate(${rotate + 2}deg)
+      translateZ(35px)
+      scale(1.025)`;
+
+
+    /*
+      Stage 2:
+      card rises above Instagram
+    */
+
+    requestAnimationFrame(() => {
+
+      tiktok.style.transform =
+        `translate3d(
+          ${x + 50}px,
+          ${y - 12}px,
+          110px
+        )
+        rotate(${rotate + 1}deg)
+        scale(1.035)`;
+
+    });
+
+  });
+
+
+  tiktok.addEventListener("mouseleave", () => {
+
+    tiktokHover = false;
+
+    const x =
+      parseFloat(tiktok.dataset.x || 0);
+
+    const y =
+      parseFloat(tiktok.dataset.y || 0);
+
+    const rotate =
+      parseFloat(tiktok.dataset.rotate || 6);
+
+
+    tiktok.style.transform =
+      `translate3d(
+        ${x}px,
+        ${y}px,
+        0
+      )
+      rotate(${rotate}deg)
+      scale(1)`;
+
+  });
+
+
+  /* =======================================================
+     SCROLL + RESIZE
+  ======================================================= */
+
+  window.addEventListener(
+    "scroll",
+    requestUpdate,
+    { passive: true }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    requestUpdate
+  );
+
+
+  /* =======================================================
+     INITIAL STATE
+  ======================================================= */
+
+  updateSocialCards();
+
+});

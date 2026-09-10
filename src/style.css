@@ -735,3 +735,64 @@ body {
     font-size: 25px;
   }
 }
+
+
+/* =========================================================
+   SHOKOL — PREMIUM 3D CARD HOVER
+========================================================= */
+
+#shokolSocialStage {
+  perspective: 1400px;
+}
+
+#shokolInstagramCard,
+#shokolTikTokCard {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  will-change: transform, filter, box-shadow;
+  transition:
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 500ms ease,
+    border-color 400ms ease;
+}
+
+/* Instagram */
+
+#shokolInstagramCard:hover {
+  z-index: 100 !important;
+
+  border-color: rgba(249, 115, 22, 0.42);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 60px 120px rgba(0, 0, 0, 0.88),
+    0 25px 60px rgba(249, 115, 22, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* TikTok */
+
+#shokolTikTokCard:hover {
+  z-index: 100 !important;
+
+  border-color: rgba(249, 115, 22, 0.42);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 60px 120px rgba(0, 0, 0, 0.88),
+    0 25px 60px rgba(249, 115, 22, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* Disable the effect on touch devices */
+
+@media (hover: none) {
+  #shokolInstagramCard:hover,
+  #shokolTikTokCard:hover {
+    filter: none;
+  }
+}
+
